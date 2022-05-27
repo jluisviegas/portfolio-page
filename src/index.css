@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inconsolata:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap");
+
+/* ================== Variables ===================== */
+:root {
+  /* Colors */
+  --color-bg: #0a192f;
+  --color-bg-variant: #112240;
+  --color-accent: #64ffda;
+  --color-primary-variant: rgba(77, 181, 255, 0.4);
+  --color-white: #fff;
+  --color-bege: #efe8d7;
+  --color-matte: #171717;
+  --color-grey: rgba(255, 255, 255, 0.6);
+
+  /* font-sizes */
+  --fs-900: 10rem;
+  --fs-800: 6.25rem;
+  --fs-700: 2.5rem;
+  --fs-600: 1.5rem;
+  --fs-500: 1.25rem;
+  --fs-400: 1rem;
+  --fs-300: 0.875rem;
+
+  /* Containers */
+  --container-width-lg: 75%;
+  --container-width-md: 86%;
+  --container-width-sm: 90%;
+
+  --transition: all 400ms ease;
+}
+
+/* Global Resets */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-bege);
+  line-height: 1.5;
+  /* background-image: url(../src/assets/bg-texture.png); */
+}
+
+/* Utility Classes */
+.fs-300 {
+  font-size: var(--fs-300);
+}
+
+.fs-400 {
+  font-size: var(--fs-400);
+}
+
+.fs-600 {
+  font-size: var(--fs-600);
+}
+
+.fs-700 {
+  font-size: var(--fs-700);
+}
+
+.fs-800 {
+  font-size: var(--fs-800);
+}
+
+.fs-900 {
+  font-size: var(--fs-900);
+}
+
+.color-bg {
+  color: var(--color-bg);
+}
+
+.color-bg-variant {
+  color: var(--color-bg-variant);
+}
+
+.color-accent {
+  color: var(--color-accent);
+}
+
+.color-white {
+  color: var(--color-white);
+}
+
+.color-bege {
+  color: var(--color-bege);
+}
+
+.color-grey {
+  color: var(--color-grey);
+}
+
+/* General */
+.container {
+  width: var(--container-width-lg);
+  margin: 0 auto;
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: 500;
+}
+
+h1 {
+  font-family: Bebas Neue, sans-serif;
+}
+
+h5 {
+  font-family: 'Playfair Display', serif;
+}
+
+section {
+  margin-top: 8rem;
+}
+
+section > h2, 
+section > h5 {
+  text-align: center;
+  color: var(--color-grey);
+}
+
+section > h2 {
+  color: var(--color-accent);
+  margin-bottom: 3rem;
+}
+
+a {
+  color: var(--color-accent);
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--color-white);
+}
+
+.btn {
+  display: inline-block;
+  width: max-content;
+  color: var(--color-accent);
+  padding: 0.75rem 1.2rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  border: 1px solid var(--color-accent);
+  transition: var(--transition);
+}
+
+.btn:hover {
+  background-color: var(--color-bege);
+  color: var(--color-bg-variant);
+  border-color: transparent;
+}
+
+.btn-primary {
+  background-color: var(--color-accent);
+  color: var(--color-bg);
+}
+
+img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Media Queries */
+/* ================= Media Queries (Medium Devices) ==================== */
+@media screen and (max-width: 1024px) {
+  .container {
+    width: var(--container-width-md);
+  }
+
+  section {
+    margin-top: 6rem;
+  }
+}
+
+/* ================= Media Queries (Small Devices) ==================== */
+@media screen and (max-width: 600px) {
+  .container {
+    width: var(--container-width-sm);
+  }
+
+  section > h2 {
+    margin-bottom: 2rem;
+  }
+}
