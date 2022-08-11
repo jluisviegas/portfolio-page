@@ -2,6 +2,8 @@
   display: grid;
   grid-template-columns: 25% 50%;
   justify-content: center;
+  place-items: center;
+  height: 50vw;
   gap: 15%;
 }
 

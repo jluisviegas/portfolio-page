@@ -1,13 +1,13 @@
 import React from 'react';
 import './about.css'
-import MeAbout from '../../assets/me-about.jpg'
+import MeAbout from '../../assets/images/me-about.jpg'
 import {FaAward} from 'react-icons/fa'
 import {FiUsers} from 'react-icons/fi'
 import {VscFolderLibrary} from 'react-icons/vsc'
 
 const About = () => {
   return (
-   <section id="about">
+   <section id="about-section">
      <h2>Sobre Mim</h2>
 
      <div className="container about__container">

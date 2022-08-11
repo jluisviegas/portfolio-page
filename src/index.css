@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inconsolata:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap");
+@font-face {
+  font-family: 'Neutra Display';
+  src: url(/src/assets/fonts/NeutraDisp-Bold.otf);
+  src: url(/src/assets/fonts/Neutra\ Display\ Light.otf);
+}
 
 /* ================== Variables ===================== */
 :root {
@@ -15,7 +20,7 @@
 
   /* font-sizes */
   --fs-900: 10rem;
-  --fs-800: 6.25rem;
+  --fs-800: 6.5rem;
   --fs-700: 2.5rem;
   --fs-600: 1.5rem;
   --fs-500: 1.25rem;
@@ -53,7 +58,6 @@ body {
   background-color: var(--color-bg);
   color: var(--color-bege);
   line-height: 1.5;
-  /* background-image: url(../src/assets/bg-texture.png); */
 }
 
 /* Utility Classes */
@@ -112,19 +116,26 @@ body {
 }
 
 h1, h2, h3, h4, h5 {
-  font-weight: 500;
+  font-family: 'Neutra Display', sans-serif;
+  text-transform: uppercase;
+
 }
 
 h1 {
-  font-family: Bebas Neue, sans-serif;
+  font-weight: 700;
 }
 
 h5 {
-  font-family: 'Playfair Display', serif;
+  font-weight: 300;
+  letter-spacing: 0.65rem;
+}
+
+h2 {
+  margin: 50px 0;
 }
 
 section {
-  margin-top: 8rem;
+  height: 100vh;
 }
 
 section > h2, 

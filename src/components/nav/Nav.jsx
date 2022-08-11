@@ -7,12 +7,16 @@ import {RiServiceLine} from 'react-icons/ri'
 
 const Nav = () => {
   return (
-    <nav>
-      <a href="#" className='active  '><AiOutlineHome/></a>
-      <a href="#about"><AiOutlineUser/></a>
-      <a href="#portfolio"><BiBook/></a>
-      <a href="#contact"><RiServiceLine/></a>
-    </nav>
+    <>
+     
+
+      <nav>
+        <a href="#" className='active'><AiOutlineHome/></a>
+        <a href="#about"><AiOutlineUser/></a>
+        <a href="#portfolio"><BiBook/></a>
+        <a href="#contact"><RiServiceLine/></a>
+      </nav>
+    </>
   )
 }
 
