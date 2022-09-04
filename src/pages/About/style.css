@@ -1,14 +1,17 @@
-.about__container {
+.about-container {
   display: grid;
   grid-template-columns: 25% 50%;
   justify-content: center;
   place-items: center;
-  height: 50vw;
   gap: 15%;
 }
 
+.about-section {
+  position: relative;
+}
+
 /* Imagem */
-.about__me {
+.about-me {
   width: 100%;
   aspect-ratio: 1/1;
   border-radius: 2rem;
@@ -17,7 +20,7 @@
   place-items: center;
 }
 
-.about__me-image {
+.about-me-image {
   width: auto 100%;
   height: 100%;
   border-radius: 2rem;
@@ -26,48 +29,50 @@
   transition: var(--transition)
 }
 
-.about__me-image:hover {
+.about-me-image:hover {
   transform: rotate(0)
 }
 
+.about-content p {
+  color: var(--color-bege);
+  padding: 2rem 0;
+}
+
+
 /* Descrição */
-.about__cards {
+.language-cards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
 }
 
-.about__card {
+.language-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background: var(--color-bg-variant);
   border: 1px solid transparent;
   border-radius: 1rem;
-  padding: 2rem;
+  padding: 1rem;
   text-align: center;
   transition: var(--transition);
 }
 
-.about__card:hover {
+.language-card:hover {
   background: transparent;
   border-color: var(--color-primary-variant);
   cursor: default;
 }
 
-.about__icon {
+.language-icon {
   color: var(--color-accent);
   font-size: 1.4rem;
-  margin-bottom: 1rem;
+ 
 }
 
-.about__card h5 {
-  font-size: 0.95rem;
-}
-
-.about__card small {
+.language-card small {
+  margin-top: 10px;
   font-size: 0.7rem;
-  color: var(--color-bege);
-}
-
-.about__content p {
-  margin: 2rem 0 2.6rem;
   color: var(--color-bege);
 }

@@ -1,11 +1,11 @@
 import React from 'react';
-import './hero.css'
+import './style.css'
 import CV from '../../assets/images/cv.pdf'
 
 const Button = () => {
   return (
-  <div className="cta fs-300">
-    <a href={CV} download className='btn'>Baixar Currículo</a>
+  <div className="cv-button fs-300">
+    <a href={CV} download className='btn'>Currículo</a>
     {/* <a href="#contact" className='btn btn-primary'>Entre em Contato</a> */}
   </div>
   )

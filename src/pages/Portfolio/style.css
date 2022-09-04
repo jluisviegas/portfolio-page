@@ -1,16 +1,19 @@
-.portfolio__container {
+.portfolio {
+  position: relative;
+}
+
+.portfolio-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 0 3rem;
-  height: 50vw;
+  gap: 2rem ;
 }
 
  .card {
-    position: relative;
+   position: relative;
    color: var(--color-bege);
    background-size: cover;
-   height: 350px;
-   max-width: 35ch;
+   height: 300px;
+   max-width: 15rem;
    padding: 2rem 0 0 ;
    border-radius: 0.5rem;
    overflow: hidden;
@@ -22,11 +25,11 @@
  }
 
  .card-content {
-   --padding: 2rem;
+   --padding: 1.5rem;
    padding: var(--padding);
    background: linear-gradient(
      hsl(0 0% 0% / 0),
-     hsl(20 0% 0% / 0.3) 20%,
+     hsl(20 0% 0% / 0.7) 20%,
      hsl(0 0% 0% / 1)
    );
  }
@@ -54,19 +57,19 @@
  }
 
  .card-body {
-   padding: 2rem 0;
+   padding: 1rem 0;
    color: rgb(255, 255, 255 / 0.85);
  }
 
 @media (hover) {
  .card-content {
-   transform: translateY(65%);
+   transform: translateY(75%);
    transition: transform 300ms ease;
  } 
 
  .card:hover .card-content, 
  .card:focus-within .card-content {
-   transform: translateY(0);
+   transform: translateY(10%);
    transition-delay: 300ms;
  }
 
@@ -94,19 +97,4 @@
   color: var(--color-accent);
   font-size: 0.7rem;
   padding: 2rem 0;
-}
-
-.button {
- cursor: pointer;
- display: inline-block;
- text-decoration: none;
- color: var(--color-bege);
- background-color: var(--color-accent);
- padding: 0.5em 1.25em;
- border-radius: 0.25rem;
-}
-
-button:hover, 
-button:focus {
- background-color: var(--color-bg);
 }

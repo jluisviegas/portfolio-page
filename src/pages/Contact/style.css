@@ -1,20 +1,21 @@
-.contact__container {
+.contact-container {
   width: 58%;
   display: grid;
   grid-template-columns: 25% 50%;
   justify-content: center;  
-  align-items: center;
   height: 50vw;
-  gap: 8%;
+  gap: 5rem;
+  margin: 100px;
 }
 
-.contact__options {
+.contact-options {
   display: flex;
   flex-direction: column;
-  gap:2rem;
+  gap: 3.5rem;
+  min-width: 220px;
 }
 
-.contact__option {
+.contact-option {
   background-color: var(--color-bg-variant);
   padding: 2rem;
   border-radius: 1.2rem;
@@ -23,12 +24,12 @@
   transition: var(--transition);
 }
 
-.contact__option:hover {
+.contact-option:hover {
   background: transparent;
   border-color: var(--color-primary-variant);
 }
 
-.contact__option a {
+.contact-option a {
   margin-top: 0.7rem;
   display: inline-block;
   font-size: 0.8rem;
@@ -38,7 +39,31 @@
 form {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 3rem;
+}
+
+.form-control {
+  position: relative;
+}
+
+.form-control label {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.form-control label span {
+  display: inline-block;
+  font-size: 14px;
+  min-width: 5px;
+  transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.form-control input:focus + label span,
+.form-control input:valid + label span {
+  color: var(--color-accent);
+  font-size: 18px;
+  transform: translateY(-50px);
 }
 
 input, textarea {

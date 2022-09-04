@@ -46,6 +46,22 @@ const data = [
     github: 'hhtps://github.com',
     description: 'https://dribble.com/shots',
     stack: 'React • CSS'
+  },
+  {
+    id: 7,
+    image: 'src/assets/images/portfolio6.jpg',
+    title: 'Portfolio Page',
+    github: 'hhtps://github.com',
+    description: 'https://dribble.com/shots',
+    stack: 'React • CSS'
+  },
+  {
+    id: 8,
+    image: 'src/assets/images/portfolio6.jpg',
+    title: 'Portfolio Page',
+    github: 'hhtps://github.com',
+    description: 'https://dribble.com/shots',
+    stack: 'React • CSS'
   }
 ]
 
