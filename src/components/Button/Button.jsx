@@ -1,14 +1,14 @@
 import React from 'react';
-import './style.css'
-import CV from '../../assets/images/cv.pdf'
+import './style.css';
 
-const Button = () => {
-  return (
-  <div className="cv-button fs-300">
-    <a href={CV} download className='btn'>Currículo</a>
-    {/* <a href="#contact" className='btn btn-primary'>Entre em Contato</a> */}
-  </div>
-  )
-}
+const Button = ({ name, href, type }) => {
+	return (
+		<a href={href} download>
+			<button type={type} className="fs-300 relative btn ff-headers">
+				{name}
+			</button>
+		</a>
+	);
+};
 
-export default Button
+export default Button;

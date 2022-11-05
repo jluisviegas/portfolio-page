@@ -1,78 +1,87 @@
 .contact-container {
-  width: 58%;
-  display: grid;
-  grid-template-columns: 25% 50%;
-  justify-content: center;  
-  height: 50vw;
-  gap: 5rem;
-  margin: 100px;
+	display: grid;
+	grid-template-columns: 25% 50%;
+	justify-content: center;
+	padding-top: 6rem;
+	gap: 4rem;
 }
 
 .contact-options {
-  display: flex;
-  flex-direction: column;
-  gap: 3.5rem;
-  min-width: 220px;
+	display: flex;
+	flex-direction: column;
+	gap: 3rem;
+	min-width: 220px;
+}
+
+.contact-text {
+	position: absolute;
+	font-size: 18rem;
+	opacity: 0.05;
+	top: -10vh;
+	left: 0;
+	z-index: -5;
 }
 
 .contact-option {
-  background-color: var(--color-bg-variant);
-  padding: 2rem;
-  border-radius: 1.2rem;
-  text-align: center;
-  border: 1px solid transparent;
-  transition: var(--transition);
+	background-color: #242029;
+	padding: 2rem;
+	border-radius: 0.3rem;
+	text-align: center;
+	border: 1px solid transparent;
+	transition: var(--transition);
 }
 
 .contact-option:hover {
-  background: transparent;
-  border-color: var(--color-primary-variant);
+	background: transparent;
+	border-color: var(--color-green);
 }
 
 .contact-option a {
-  margin-top: 0.7rem;
-  display: inline-block;
-  font-size: 0.8rem;
+	margin-top: 0.7rem;
+	display: inline-block;
+	font-size: 0.8rem;
 }
 
 /* Formulário */
 form {
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
+	display: flex;
+	flex-direction: column;
+	gap: 2.5rem;
 }
 
-.form-control {
-  position: relative;
+input,
+textarea {
+	width: 100%;
+	padding: 1.5rem;
+	border-radius: 0.2rem;
+	background-color: var(--color-primary-light);
+	resize: none;
+	color: var(--color-white);
 }
 
-.form-control label {
-  position: absolute;
-  top: 20px;
-  left: 20px;
+input:focus-within,
+textarea:focus-within {
+	border: 1px solid var(--color-accent);
+	background-color: transparent;
 }
 
-.form-control label span {
-  display: inline-block;
-  font-size: 14px;
-  min-width: 5px;
-  transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+@media screen and (max-width: 1024px) {
+	.contact-container {
+		grid-template-columns: 50% minmax(250px, 50%);
+	}
 }
 
-.form-control input:focus + label span,
-.form-control input:valid + label span {
-  color: var(--color-accent);
-  font-size: 18px;
-  transform: translateY(-50px);
-}
+@media screen and (max-width: 600px) {
+	.contact-container {
+		grid-template-columns: repeat(auto-fill, 300px);
+	}
 
-input, textarea {
-  width: 100%;
-  padding: 1.5rem;
-  border-radius: 0.5rem;
-  background: transparent;
-  border: 2px solid var(--color-primary-variant);
-  resize: none;
-  color: var(--color-white);
+	.contact-options {
+		max-width: 15rem;
+		margin: 0 auto;
+	}
+	.contact-options,
+	form {
+		gap: 1rem;
+	}
 }
-
