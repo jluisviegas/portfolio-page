@@ -3,7 +3,8 @@ const messages = {
 		translations: {
 			nav: {
 				about: 'Sobre',
-				portfolio: 'Portfólio',
+				projects: 'Projetos',
+				contact: 'Contato',
 			},
 			buttons: {
 				cv: 'Currículo',
@@ -11,11 +12,11 @@ const messages = {
 				contact: 'Contato',
 			},
 			headers: {
-				dev1: 'Desenvolvedor',
-				dev2: 'Frontend',
+				dev1: 'Web',
+				dev2: 'Developer',
 				about: 'Sobre',
 				hab: 'Habilidades',
-				portfolio: 'Portfólio',
+				projects: 'Projetos',
 				contact: 'Contato',
 			},
 			description: {
@@ -29,9 +30,10 @@ const messages = {
 					'e transitar minha carreira para a de Desenvolvedor Web, estabelecendo também meu ',
 				span3: 'domínio fluente do inglês',
 			},
+			projects: {},
 			contact: {
-				email: 'Enviar E-Mail',
-				wp: 'Enviar Mensagem',
+				email: 'Enviar email',
+				wp: 'Enviar mensagem',
 				name: 'Nome',
 			},
 			footer: {

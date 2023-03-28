@@ -1,11 +1,11 @@
-import { useEffect, useRef, useState } from 'react';
-import Footer from './components/Footer/Footer';
-import Loader from './components/Loader/Loader';
+import { useEffect, useState } from 'react';
+import Footer from './components/Footer';
+import Loader from './components/Loader';
 import Navbar from './components/Navbar/Navbar';
-import About from './pages/About/About';
-import Contact from './pages/Contact/Contact';
-import Home from './pages/Home/Home';
-import Portfolio from './pages/Portfolio/Portfolio';
+import About from './layouts/About';
+import Contact from './layouts/Contact';
+import Home from './layouts/Home';
+import Projects from './layouts/Projects';
 
 function App() {
 	const [loading, setLoading] = useState(false);
@@ -14,7 +14,7 @@ function App() {
 		setLoading(true);
 		setTimeout(() => {
 			setLoading(false);
-		}, 3000);
+		}, 5000);
 	}, []);
 
 	return (
@@ -25,7 +25,7 @@ function App() {
 				<>
 					<Home />
 					<About />
-					<Portfolio />
+					<Projects />
 					<Contact />
 					<Footer />
 				</>

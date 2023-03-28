@@ -19,15 +19,17 @@ const messages = {
 				contact: 'Contact Me',
 			},
 			description: {
-				span1: 'Graduated in Businnes and Marketing MBA',
+				span1: 'Graduated in Business and Marketing in MBA',
 				about1:
-					", I've been working most of my carrer in both private and public sector tenho grande parte da minha experiência profissional em cargos de gerenciamento e liderança na área privada e pública na cidade de São Luis - MA, com reconhecimento expressivo na melhoria de processos e eficiência nos projetos implementados, assim como um ótimo desempenho como líder e nas relações interpessoais.",
+					", I've been working most of my career in both private and public sector filling management positions and leadership roles in the city of São Luis - MA. I've been recognized for developing strategic plan for optimized productivity and improving organizational effectiveness by developing processes and implementing innovative changes. I have also been recognized for my excellent performance as a leader and in interpersonal relationships.",
 				about2:
-					'Mais recentemente, em busca de firmar intenções e entusiasmos antigos, mudei-me para Vancouver, CA por alguns anos para iniciar meus estudos em',
-				span2: 'Information Technology',
+					'More recently, I moved to Vancouver, CA to start my studies in  ',
+				span2: 'Information Technology ',
 				about3:
-					'and shift my carrer to Web Development, estabelecendo também meu',
-				span3: 'domínio fluente do inglês',
+					'and shift my career to Web Development,  which has always been a desire of mine. This foreign experience was also extremely helpful for establishing my ',
+				span3: 'command of the English language ',
+				about4:
+					'and be more well rounded in my communication skills and professional experience in general.',
 			},
 			contact: {
 				email: 'Send E-Mail',

@@ -1,0 +1,77 @@
+@use '../abstracts' as *;
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	border: 0;
+	outline: 0;
+	list-style: none;
+	text-decoration: none;
+}
+html {
+	scroll-behavior: smooth;
+}
+
+/* General */
+section,
+main {
+	min-height: 100vh;
+	overflow: hidden;
+	&:not(:first-child) {
+		margin-top: 4rem;
+	}
+}
+
+.container {
+	width: calc(100% - 2vw);
+	margin-inline: auto;
+
+	@include mq(sm) {
+		width: calc(100% - 12vw);
+	}
+}
+.container-small {
+	width: calc(100% - 17vw);
+	margin-inline: auto;
+	transition: 200ms;
+
+	@include mq(lg) {
+		width: calc(100% - 40vw);
+	}
+}
+
+@-webkit-keyframes rotating /* Safari and Chrome */ {
+	from {
+		-webkit-transform: rotate(0deg);
+		-o-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+	to {
+		-webkit-transform: rotate(360deg);
+		-o-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+@keyframes rotating {
+	from {
+		-ms-transform: rotate(0deg);
+		-moz-transform: rotate(0deg);
+		-webkit-transform: rotate(0deg);
+		-o-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+	to {
+		-ms-transform: rotate(360deg);
+		-moz-transform: rotate(360deg);
+		-webkit-transform: rotate(360deg);
+		-o-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+.rotating {
+	-webkit-animation: rotating 10s linear infinite;
+	-moz-animation: rotating 10s linear infinite;
+	-ms-animation: rotating 10s linear infinite;
+	-o-animation: rotating 10s linear infinite;
+	animation: rotating 10s linear infinite;
+}

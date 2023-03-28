@@ -1,25 +1,33 @@
-import React, { useRef } from 'react';
+import { motion as m } from 'framer-motion';
 import { i18next as lng } from '../../translate/i18n';
-import Button from '../Button/Button';
-
-import './style.css';
+import Button from '../Button';
 
 const Nav = () => {
 	return (
 		<>
-			<nav className="desktop-menu ff-text relative fs-400">
+			<m.nav
+				className="desktop-menu"
+				initial={{ opacity: 0, scale: 0.5, y: -80 }}
+				animate={{ opacity: 1, scale: 1, y: 0 }}
+				transition={{
+					duration: 0.8,
+					delay: 1,
+					ease: [0, 0.71, 0.2, 1.01],
+				}}
+			>
 				<ul>
 					<li>
-						<a href="#">Home</a>
+						<a href="#">{lng.t('nav.about')}</a>
 					</li>
 					<li>
 						<a href="#about-section">{lng.t('nav.about')}</a>
 					</li>
 					<li>
-						<a href="#portfolio-section">{lng.t('nav.portfolio')}</a>
+						<a href="#portfolio-section">{lng.t('nav.projects')}</a>
 					</li>
+					<Button name="Resume" className="btn-light" />
 				</ul>
-			</nav>
+			</m.nav>
 		</>
 	);
 };

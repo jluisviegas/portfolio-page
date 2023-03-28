@@ -1,0 +1,23 @@
+@font-face {
+	font-family: 'SF Mono';
+	src: url(/src/assets/fonts/SF-Mono-Medium.ttf) format('truetype');
+	src: url(/src/assets/fonts/SF-Mono-Light.ttf) format('truetype');
+}
+
+@font-face {
+	font-family: 'D-Din';
+	src: url(/src/assets/fonts/D-DINCondensed.ttf) format('truetype');
+}
+@font-face {
+	font-family: 'Barkesville';
+	src: url(/src/assets/fonts/Barkesville.ttf) format('truetype');
+}
+
+@font-face {
+	font-family: 'Neue Montreal';
+	src: url(/src/assets/fonts/NeueMontreal-Medium.otf) format('opentype');
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap');

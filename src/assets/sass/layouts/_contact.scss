@@ -1,0 +1,153 @@
+@use '../abstracts' as *;
+
+.contact-container {
+	position: relative;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+	justify-content: center;
+	margin: 0 auto;
+	min-width: 300px;
+	padding: 1rem;
+	gap: 4rem;
+
+	&::after {
+		content: '';
+		position: absolute;
+		display: block;
+		height: 100%;
+		width: 1px;
+		background: var(--clr-primary-light);
+		right: -12vw;
+	}
+
+	@include mq(xl) {
+		grid-template-columns: 35% 65%;
+	}
+}
+
+.contact-bg-info {
+	position: relative;
+	background-image: url(../../assets/images/me-about.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	&::after {
+		content: '';
+		position: absolute;
+		display: block;
+		width: 100%;
+		height: 100%;
+		background-color: var(--clr-neutral-dark);
+		inset: 0;
+		z-index: 1;
+		opacity: 0.85;
+	}
+}
+
+.contact-info {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	height: 100%;
+	z-index: 2;
+
+	color: var(--clr-neutral-light);
+
+	@include mq(md) {
+		.info-option {
+			padding: 3rem;
+			gap: 3rem;
+		}
+	}
+}
+
+.info-option {
+	padding: 1.5rem;
+	color: var(--clr-neutral-base);
+	z-index: 2;
+}
+
+.info-title {
+	display: flex;
+	align-items: center;
+	gap: 0.7rem;
+}
+
+.info-desc {
+	padding: 1rem 2rem;
+	a {
+		color: var(--clr-primary-base);
+	}
+	p {
+		font-size: var(--fs-300);
+	}
+}
+
+p {
+	svg {
+		margin-left: 1rem;
+		animation-name: forward;
+		animation-duration: 0.5s;
+		animation-iteration-count: infinite;
+		animation-direction: alternate;
+		font-size: 0.7rem;
+	}
+}
+
+.contact-message {
+	line-height: 0.8;
+	text-align: end;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	margin-top: 1rem;
+	gap: 1rem;
+
+	@include mq(sm) {
+		gap: 2rem;
+		padding: 1.5rem;
+	}
+}
+
+input,
+textarea {
+	width: 100%;
+	padding: 1.5rem;
+	border-radius: 0.2rem;
+	background-color: var(--clr-primary-base);
+	border-bottom: 1px solid var(--clr-primary-light);
+	resize: none;
+	color: var(--clr-neutral-light);
+}
+
+input:focus-within,
+textarea:focus-within {
+	border: 1px solid var(--clr-accent-base);
+	background-color: transparent;
+}
+
+.submit {
+	margin-top: 2rem;
+	margin-bottom: 8rem;
+	text-align: end;
+}
+
+@keyframes forward {
+	0% {
+		margin-left: 0.5rem;
+	}
+	100% {
+		margin-left: 1rem;
+	}
+}
+
+.lines {
+	content: '';
+	display: block;
+	position: absolute;
+	height: 50vh;
+	width: 50%;
+	border: 2px solid var(--clr-primary-light);
+	left: -150px;
+}

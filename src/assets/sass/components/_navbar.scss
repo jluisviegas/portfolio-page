@@ -1,0 +1,33 @@
+.desktop-menu {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	ul,
+	li {
+		margin: 0;
+		padding: 0;
+		font-family: 'SF Mono';
+		text-transform: uppercase;
+		color: var(--clr-neutral-light);
+		font-size: 14px;
+		letter-spacing: 1.6px;
+	}
+
+	ul {
+		display: flex;
+		position: relative;
+		align-items: center;
+		justify-content: center;
+
+		gap: 2rem;
+	}
+
+	li {
+		list-style: none;
+		margin-bottom: 20px;
+		display: flex;
+		align-items: center;
+		cursor: pointer;
+	}
+}

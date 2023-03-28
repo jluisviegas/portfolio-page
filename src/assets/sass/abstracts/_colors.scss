@@ -1,0 +1,17 @@
+$colors: (
+	primary: (
+		base: hsl(240, 24%, 8%),
+		light: hsl(267, 11%, 15%),
+		dark: hsl(224, 52%, 4%),
+	),
+	accent: (
+		base: hsl(346, 100%, 50%),
+		light: hsl(13, 100%, 55%),
+		dark: hsl(158, 100%, 21%),
+	),
+	neutral: (
+		base: hsl(28, 27%, 89%),
+		light: hsl(28, 27%, 100%),
+		dark: hsl(32.1, 38%, 63.3%),
+	),
+);

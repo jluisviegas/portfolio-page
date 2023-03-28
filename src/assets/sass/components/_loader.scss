@@ -1,0 +1,49 @@
+.loading {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background-color: var(--clr-primary-dark);
+
+	svg {
+		-webkit-animation: sk-scaleout 5s infinite ease-in-out alternate;
+		animation: sk-scaleout 5s infinite ease-in-out alternate;
+		background-color: transparent;
+		height: 6rem;
+		width: 6rem;
+	}
+
+	small {
+		color: var(--clr-neutral-base);
+		opacity: 0.6;
+		text-transform: uppercase;
+		-webkit-animation: sk-scaleout 5s infinite ease-in-out alternate;
+		animation: sk-scaleout 5s infinite ease-in-out alternate;
+		animation-fill-mode: both;
+		margin-top: 2rem;
+		letter-spacing: 1.8px;
+		font-size: 9px;
+	}
+}
+
+.item {
+	width: 56%;
+	overflow: visible;
+	stroke: #ece4b4;
+	stroke-width: 1;
+	stroke-linejoin: round;
+	stroke-linecap: round;
+}
+
+@keyframes sk-scaleout {
+	0% {
+		opacity: 0;
+	}
+	90% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
