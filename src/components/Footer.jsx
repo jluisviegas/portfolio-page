@@ -5,34 +5,16 @@ import Socials from './Socials';
 
 const Footer = () => {
 	return (
-		<footer className="footer">
-			<div className="footer-main container">
+		<footer className="footer container">
+			<div className="separator container-small"></div>
+			<div className="footer-main">
 				<div className="footer-logo">
 					<Logo />
 				</div>
-
-				<div className="footer-links">
-					<p className="mobile-display">Social</p>
-					<ul className="footer-social">
-						<li>
-							<small> LinkedIn</small>
-						</li>
-						<li>
-							<small>Instagram</small>
-						</li>
-						<li>
-							<small>GitHub</small>
-						</li>
-					</ul>
-				</div>
 			</div>
-
-			<div className="container">
-				<div className="separator"></div>
-				<small>
-					&copy; 2023 <i> Luis Viegas</i>. {lng.t('footer.rights')}
-				</small>
-			</div>
+			<small>
+				&copy; 2023 <i> Luis Viegas</i>. {lng.t('footer.rights')}
+			</small>
 		</footer>
 	);
 };

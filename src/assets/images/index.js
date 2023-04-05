@@ -14,6 +14,7 @@ import number3 from './n03.svg';
 import number4 from './n04.svg';
 import next from './next.png';
 import node from './node.png';
+import project2 from './project02.png';
 import react from './react.png';
 import sass from './sass.png';
 import project1 from './screens_portfolio_page.png';
@@ -23,6 +24,7 @@ import typescript from './typescript.png';
 import wordpress from './wordpress.png';
 
 export {
+	project2,
 	number1,
 	number2,
 	number3,

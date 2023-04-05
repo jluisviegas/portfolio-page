@@ -1,16 +1,29 @@
 import emailjs from '@emailjs/browser';
-import { motion as m, useInView, useScroll, useTransform } from 'framer-motion';
+import {
+	motion as m,
+	useInView,
+	useMotionValue,
+	useScroll,
+	useSpring,
+	useTransform,
+} from 'framer-motion';
 import React, { useRef } from 'react';
 import { BsWhatsapp } from 'react-icons/bs';
+import { FiArrowDownRight, FiArrowUpRight } from 'react-icons/fi';
 import { MdOutlineArrowForwardIos, MdOutlineEmail } from 'react-icons/md';
 import { cardAnimated, itemAnimated } from '../animation';
 import Button from '../components/Button';
+import Socials from '../components/Socials';
 import { i18next as lng } from '../translate/i18n';
 
 const Contact = () => {
 	const form = useRef(null);
 	const hRef = useRef(null);
-	const hInView = useInView(hRef, { once: false });
+	const cRef = useRef(null);
+	const isInView = useInView(hRef, { once: false });
+
+	const { scrollYProgress } = useScroll();
+	const y = useTransform(scrollYProgress, [0, 0], [0, 0]);
 
 	const sendEmail = (e) => {
 		e.preventDefault();
@@ -26,105 +39,94 @@ const Contact = () => {
 	};
 
 	return (
-		<section className="relative" id="contact-section">
+		<section className="relative" id="contact-section" ref={hRef}>
 			{/* Section Header */}
-			<m.div
-				className="section-header"
-				ref={hRef}
-				style={{
-					transform: hInView ? 'none' : 'translateY(50px)',
-					opacity: hInView ? 1 : 0,
-					transition:
-						'opacity 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s, transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s',
-				}}
-			>
-				<h2 className="container">
-					{lng.t('headers.contact')} <div className="separator"></div>
-				</h2>
+			<div className="section-header">
 				<div className="big-header">{lng.t('buttons.contact')}</div>
-			</m.div>
+			</div>
 
-			<div className="lines"></div>
-
-			{/* Contact Info */}
-			<div className="contact-container container-small">
-				<div className="contact-bg-info">
+			<m.div className="contact-container" style={{ y }}>
+				{/* Contact Info */}
+				<div className="contact-bg-info ">
 					<div className="contact-info">
-						<div className="info-option">
-							<div className="info-title">
-								<MdOutlineEmail />
+						<m.div
+							className="info-option"
+							ref={cRef}
+							initial="offscreen"
+							whileInView="onscreen"
+							viewport={{ once: true, amount: 0 }}
+							variants={cardAnimated}
+						>
+							<MdOutlineEmail />
+
+							<m.div className="info-title" variants={itemAnimated}>
 								<h5>Email</h5>
-							</div>
-							<div className="info-desc">
+							</m.div>
+							<m.div className="info-desc" variants={itemAnimated}>
 								<p>jlviegass@gmail.com</p>
 								<a href="mailto: jluisviegas@hotmail.com" target="_blank">
-									<p>
-										{lng.t('contact.email')} <MdOutlineArrowForwardIos />
-									</p>
+									<p>{lng.t('contact.email')}</p>
+									<FiArrowUpRight />
 								</a>
-							</div>
-						</div>
+							</m.div>
+						</m.div>
 
-						<div className="info-option">
-							<div className="info-title">
-								<BsWhatsapp />
+						<m.div
+							className="info-option"
+							ref={cRef}
+							initial="offscreen"
+							whileInView="onscreen"
+							viewport={{ once: true, amount: 0 }}
+							variants={cardAnimated}
+						>
+							<BsWhatsapp />
+
+							<m.div className="info-title" variants={itemAnimated}>
 								<h5>Phone</h5>
-							</div>
-							<div className="info-desc">
+							</m.div>
+							<m.div className="info-desc" variants={itemAnimated}>
 								<p>+55 98 99171 2252</p>
 								<a
 									href="https://api.whatsapp.com/send?phone=5598991712252"
 									target="_blank"
 								>
-									<p>
-										{lng.t('contact.wp')} <MdOutlineArrowForwardIos />
-									</p>
+									<p>{lng.t('contact.wp')}</p>
+									<FiArrowUpRight />
 								</a>
-							</div>
-						</div>
+							</m.div>
+						</m.div>
+						<Socials />
 					</div>
 				</div>
 
 				{/* Contact Form */}
-				<m.form
-					ref={form}
-					onSubmit={sendEmail}
-					initial="offscreen"
-					whileInView="onscreen"
-					viewport={{ once: true, amount: 0 }}
-					variants={cardAnimated}
-				>
-					<m.div className="contact-message" variants={itemAnimated}>
-						<small>
-							Entre em contato para dúvidas, propostas ou algo em que eu possa
-							ajudá-lo(a).
-						</small>
-					</m.div>
-					<m.div variants={itemAnimated}>
-						<input
-							type="text"
-							name="name"
-							placeholder={lng.t('contact.name')}
-							required
-						/>
-					</m.div>
-					<m.div variants={itemAnimated}>
-						<input type="email" name="email" placeholder="Email" required />
-					</m.div>
-					<m.div variants={itemAnimated}>
-						<textarea
-							className="ff-headers"
-							name="message"
-							rows="5"
-							placeholder="Mensagem"
-						></textarea>
-					</m.div>
-				</m.form>
-			</div>
+				<form ref={form} onSubmit={sendEmail}>
+					<div className="contact-message">
+						<FiArrowDownRight />
+						<h3 className="text-right">
+							Diga
+							<i> Olá!</i>
+						</h3>
+					</div>
 
-			<div className="submit container-small">
-				<Button type="submit" name={lng.t('buttons.msg')} className="btn" />
-			</div>
+					<input
+						type="text"
+						name="name"
+						placeholder={lng.t('contact.name')}
+						required
+					/>
+					<input type="email" name="email" placeholder="Email" required />
+					<textarea
+						className="ff-headers"
+						name="message"
+						rows="3"
+						placeholder="Mensagem"
+					></textarea>
+					<div className="submit">
+						<Button type="submit" name={lng.t('buttons.msg')} className="btn" />
+					</div>
+				</form>
+			</m.div>
 		</section>
 	);
 };

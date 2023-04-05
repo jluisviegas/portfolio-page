@@ -1,54 +1,37 @@
-import { motion as m, useInView } from 'framer-motion';
-import { useRef } from 'react';
-import { skills } from '../assets/images';
+import { motion as m, useScroll } from 'framer-motion';
+import { useEffect, useRef } from 'react';
 import { skillsData } from '../Data';
+import { skills } from '../assets/images';
 import { i18next as lng } from '../translate/i18n';
 
 const About = () => {
-	const hRef = useRef(null);
-	const hInView = useInView(hRef, { once: false });
-
 	return (
-		<section className="relative" id="about-section">
+		<section className="about-section" id="about-section">
 			{/* Section Header */}
-			<m.div
-				className="section-header"
-				ref={hRef}
-				style={{
-					transform: hInView ? 'none' : 'translateY(50px)',
-					opacity: hInView ? 1 : 0,
-					transition:
-						'opacity 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s, transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s',
-				}}
-			>
-				<h2 className="container">
-					{lng.t('headers.about')}
-					<div className="separator"></div>
-				</h2>
-				<div className="big-header">{lng.t('headers.about')}</div>
-			</m.div>
 
-			<div className="container about-container">
+			<div className="separator"></div>
+
+			<div className="about-container">
 				{/* About Descriprion */}
-				<div className="about-content">
+				<div className="about-content container">
 					<div className="about-description">
-						<p>
+						<p className="left-col">
 							<span>{lng.t('description.span1')}</span>
 							{lng.t('description.about1')}
 						</p>
-						<p>
+						<div className="separator container-small text-left"></div>
+
+						<p className="right-col">
 							{lng.t('description.about2')}
 							<span>{lng.t('description.span2')}</span>
 							{lng.t('description.about3')}
-							<span>{lng.t('description.span3')}</span>
-							{lng.t('description.about4')}
 						</p>
 					</div>
 				</div>
 
 				{/* Skill Icons */}
 
-				<div className="language-cards">
+				<div className="language-cards container">
 					<div className="skills">
 						<img src={skills} alt="" className="rotating " />
 					</div>

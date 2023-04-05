@@ -15,7 +15,7 @@ const Logo = () => {
 					animate={{ opacity: 1, scale: 1, x: 0 }}
 					transition={{
 						duration: 0.8,
-						delay: 1,
+						delay: 0.5,
 						ease: [0, 0.71, 0.2, 1.01],
 					}}
 				>
