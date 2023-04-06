@@ -1,5 +1,10 @@
-import { motion as m } from 'framer-motion';
-import React from 'react';
+import {
+	animate,
+	motion as m,
+	useMotionValue,
+	useTransform,
+} from 'framer-motion';
+import { useEffect } from 'react';
 
 const icon = {
 	hidden: {
@@ -15,6 +20,14 @@ const icon = {
 };
 
 const Loader = ({ loading }) => {
+	const count = useMotionValue(0);
+	const rounded = useTransform(count, Math.round);
+
+	useEffect(() => {
+		const animation = animate(count, 100, { duration: 4 });
+
+		return animation.stop;
+	}, []);
 	return (
 		<div className="loading">
 			<m.svg
@@ -46,7 +59,7 @@ const Loader = ({ loading }) => {
 				/>
 			</m.svg>
 
-			<small>Loading</small>
+			<m.small>{rounded}</m.small>
 		</div>
 	);
 };

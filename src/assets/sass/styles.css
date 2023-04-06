@@ -110,7 +110,7 @@ h5 {
 
 p {
   font-size: var(--fs-400);
-  font-family: var(--ff-primary);
+  font-family: var(--ff-montreal);
   transition: font-size 0.25s linear;
 }
 
@@ -268,13 +268,11 @@ ul {
 }
 .loading small {
   color: var(--clr-neutral-base);
-  opacity: 0.6;
-  text-transform: uppercase;
   animation: sk-scaleout 5s infinite ease-in-out alternate;
   animation-fill-mode: both;
   margin-top: 2rem;
   letter-spacing: 1.8px;
-  font-size: 9px;
+  font-size: 0.8rem;
 }
 
 .item {
@@ -675,7 +673,6 @@ ul {
 
 .language-card {
   position: relative;
-  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -690,10 +687,6 @@ ul {
   filter: grayscale(0);
   cursor: default;
   transition: filter 0.5s ease-in-out;
-}
-.language-card small {
-  margin-top: 10px;
-  color: var(--clr-neutral-dark);
 }
 
 .projects-container {

@@ -67,7 +67,6 @@
 
 .language-card {
 	position: relative;
-	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
@@ -83,9 +82,5 @@
 			cursor: default;
 			transition: filter 0.5s ease-in-out;
 		}
-	}
-	small {
-		margin-top: 10px;
-		color: var(--clr-neutral-dark);
 	}
 }

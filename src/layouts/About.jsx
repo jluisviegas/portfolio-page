@@ -1,15 +1,26 @@
-import { motion as m, useScroll } from 'framer-motion';
-import { useEffect, useRef } from 'react';
+import {
+	motion as m,
+	useScroll,
+	useSpring,
+	useTransform,
+	useVelocity,
+} from 'framer-motion';
 import { skillsData } from '../Data';
 import { skills } from '../assets/images';
 import { i18next as lng } from '../translate/i18n';
 
 const About = () => {
+	const { scrollYProgress } = useScroll();
+	const scrollVelocity = useVelocity(scrollYProgress);
+	const smoothVelocity = useSpring(scrollVelocity, {
+		damping: 50,
+		stiffness: 400,
+	});
+	const x = useTransform(scrollYProgress, [0, 1], [0, -200]);
+
 	return (
 		<section className="about-section" id="about-section">
 			{/* Section Header */}
-
-			<div className="separator"></div>
 
 			<div className="about-container">
 				{/* About Descriprion */}
@@ -29,6 +40,10 @@ const About = () => {
 					</div>
 				</div>
 
+				<div className="section-header">
+					<div className="big-header right">{lng.t('headers.projects')}</div>
+				</div>
+
 				{/* Skill Icons */}
 
 				<div className="language-cards container">
@@ -36,10 +51,9 @@ const About = () => {
 						<img src={skills} alt="" className="rotating " />
 					</div>
 					{skillsData.map((skill) => (
-						<div className="language-card" key={skill.id}>
+						<m.div className="language-card" key={skill.id} style={{ x: x }}>
 							<img src={skill.skill} alt="" />
-							{/* <small>{skill.title}</small> */}
-						</div>
+						</m.div>
 					))}
 				</div>
 			</div>
