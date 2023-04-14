@@ -12,8 +12,7 @@ h1,
 h2,
 h3 {
 	font-weight: normal;
-	font-stretch: 100%;
-	line-height: 1.1;
+	line-height: 1;
 	font-family: var(--ff-bodoni);
 	color: var(--clr-neutral-base);
 	transition: font-size 0.25s linear;
@@ -21,7 +20,7 @@ h3 {
 
 h1 {
 	font-size: calc(var(--fs-800) * 1.7);
-	font-family: var(--ff-primary);
+	font-family: var(--ff-antique);
 }
 
 h2 {
@@ -61,26 +60,22 @@ small {
 	font-size: var(--fs-300);
 	font-family: var(--ff-apercu);
 }
-
-button {
-	font-family: var(--ff-apercu);
-}
-
 span {
+	font-family: var(--ff-antique);
 	font-size: var(--fs-300);
 	color: var(--clr-accent-base);
 }
 
-a {
-	color: var(--clr-neutral-base);
-	@include transition(ease-in-out 0.3s all);
+// a {
+// 	color: var(--clr-neutral-base);
+// 	@include transition(ease-in-out 0.3s all);
 
-	&:hover,
-	&:focus {
-		color: var(--clr-neutral-base);
-		text-decoration: none;
-	}
-}
+// 	&:hover,
+// 	&:focus {
+// 		color: var(--clr-neutral-base);
+// 		text-decoration: none;
+// 	}
+// }
 
 ::placeholder {
 	color: var(--clr-neutral-dark);

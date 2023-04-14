@@ -1,13 +1,20 @@
-import { motion as m } from 'framer-motion';
-import { useState } from 'react';
+import { motion as m, useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
 import { BsArrowUpRightSquare } from 'react-icons/bs';
 import { FiGithub } from 'react-icons/fi';
+import { Tilt } from 'react-tilt';
 import projectsData from '../Data';
-import { cardAnimated, itemAnimated } from '../animation';
+import { cardAnimated, defaultOptions, itemAnimated } from '../animation';
 import { i18next as lng } from '../translate/i18n';
 import Button from './Button';
 
 const ProjectCard = () => {
+	const ref = useRef(null);
+
+	const { scrollYProgress } = useScroll({
+		target: ref,
+		offset: ['start end', 'end end'],
+	});
 	return (
 		<div className="projects-container container ">
 			{projectsData.map(({ id, image, title, github, description, stack }) => {
@@ -17,7 +24,14 @@ const ProjectCard = () => {
 							className="project-bg"
 							style={{ backgroundImage: `url(${image})` }}
 						></div>
-						<li className="project">
+						<m.li
+							className="project"
+							ref={ref}
+							initial="offscreen"
+							whileInView="onscreen"
+							viewport={{ once: true, amount: 0 }}
+							variants={cardAnimated}
+						>
 							<div className="project-content">
 								<h4 className="uppercase">
 									<a href="">{title}</a>
@@ -32,15 +46,15 @@ const ProjectCard = () => {
 									<small>{stack.lng3}</small>
 								</div>
 							</div>
-							<div className="project-image">
+							<Tilt className="project-image" options={defaultOptions}>
 								<img src={image} alt="" />
 								<div className="project-links">
 									<a href={github} aria-label="GitHub Link">
 										<FiGithub />
 									</a>
 								</div>
-							</div>
-						</li>
+							</Tilt>
+						</m.li>
 					</ul>
 				);
 			})}

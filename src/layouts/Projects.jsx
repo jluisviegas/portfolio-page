@@ -1,10 +1,4 @@
-import {
-	motion as m,
-	useInView,
-	useScroll,
-	useSpring,
-	useTransform,
-} from 'framer-motion';
+import { motion as m, useInView, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import ProjectCard from '../components/ProjectCard';
 import { i18next as lng } from '../translate/i18n';
@@ -14,34 +8,31 @@ function useParallax(value, distance) {
 }
 
 const Projects = () => {
-	const hRef = useRef(null);
-	const hInView = useInView(hRef, { once: false });
+	const sectionRef = useRef(null);
 
-	const { scrollYProgress } = useScroll();
-	const scaleX = useSpring(scrollYProgress, {
-		stiffness: 100,
-		damping: 30,
-		restDelta: 0.001,
+	const { scrollYProgress } = useScroll({
+		target: sectionRef,
+		offset: ['start end', 'end end'],
 	});
+	const opacitySection = useTransform(scrollYProgress, [0.1, 0.5], [0.2, 1]);
+	const y = useParallax(scrollYProgress, 80);
 
 	return (
-		<section className="relative" id="portfolio-section">
+		<m.section
+			className="relative"
+			id="portfolio-section"
+			ref={sectionRef}
+			style={{
+				opacity: opacitySection,
+				y,
+			}}
+		>
 			{/* Section Header */}
-			<m.div
-				className="section-header"
-				ref={hRef}
-				style={{
-					transform: hInView ? 'none' : 'translateY(50px)',
-					opacity: hInView ? 1 : 0,
-					transition:
-						'opacity 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s, transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s',
-				}}
-			>
+			<m.div className="section-header" style={{ y }}>
 				<div className="big-header right">{lng.t('headers.projects')}</div>
 			</m.div>
 			<ProjectCard />
-			<m.div className="progress" style={{ scaleX }} />
-		</section>
+		</m.section>
 	);
 };
 

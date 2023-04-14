@@ -10,7 +10,7 @@ const LanguageSelector = () => {
 	};
 
 	return (
-		<div className="lng-switch fw-300 fade-in">
+		<div className="lng-switch">
 			<ul>
 				<li>
 					<a
@@ -18,7 +18,7 @@ const LanguageSelector = () => {
 						id="pt-BR"
 						onClick={handleLanguageSwitch}
 					>
-						PT
+						Portuguese
 					</a>
 				</li>
 
@@ -28,7 +28,7 @@ const LanguageSelector = () => {
 						id="en-US"
 						onClick={handleLanguageSwitch}
 					>
-						EN
+						English
 					</a>
 				</li>
 			</ul>

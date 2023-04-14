@@ -1,34 +1,50 @@
-import { motion as m } from 'framer-motion';
+import { motion as m, useCycle } from 'framer-motion';
+import * as React from 'react';
+import { useRef } from 'react';
 import { i18next as lng } from '../../translate/i18n';
-import Button from '../Button';
+import { MenuToggle } from './MenuToggle';
+import { Navigation } from './Navigation';
+
+const sidebar = {
+	open: {
+		scale: 80,
+		background: '#DCDDE1',
+		transition: {
+			type: 'spring',
+			stiffness: 40,
+			restDelta: 2,
+		},
+	},
+	closed: {
+		scale: 1,
+		borderRadius: '50%',
+		background: '#ff003b',
+		transition: {
+			type: 'spring',
+			stiffness: 400,
+			damping: 50,
+		},
+	},
+};
 
 const Nav = () => {
+	const [isOpen, toggleOpen] = useCycle(false, true);
+	const containerRef = useRef(null);
+	isOpen
+		? (document.body.style.overflow = 'hidden')
+		: (document.body.style.overflow = 'auto');
+
 	return (
-		<>
-			<m.nav
-				className="desktop-menu"
-				initial={{ opacity: 0, scale: 0.5, y: -80 }}
-				animate={{ opacity: 1, scale: 1, y: 0 }}
-				transition={{
-					duration: 0.8,
-					delay: 1,
-					ease: [0, 0.71, 0.2, 1.01],
-				}}
-			>
-				<ul>
-					<li>
-						<a href="#">{lng.t('nav.about')}</a>
-					</li>
-					<li>
-						<a href="#about-section">{lng.t('nav.about')}</a>
-					</li>
-					<li>
-						<a href="#portfolio-section">{lng.t('nav.projects')}</a>
-					</li>
-					<Button name="Resume" className="btn-light" />
-				</ul>
-			</m.nav>
-		</>
+		<m.nav
+			initial={false}
+			animate={isOpen ? 'open' : 'closed'}
+			ref={containerRef}
+			className="relative"
+		>
+			<m.div className="background" variants={sidebar} />
+			<Navigation toggle={() => toggleOpen()} />
+			<MenuToggle toggle={() => toggleOpen()} />
+		</m.nav>
 	);
 };
 

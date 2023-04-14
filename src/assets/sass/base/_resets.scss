@@ -1,4 +1,7 @@
 @use '../abstracts' as *;
+.App {
+	position: relative;
+}
 
 * {
 	box-sizing: border-box;
@@ -10,20 +13,35 @@
 }
 html {
 	scroll-behavior: smooth;
+	-webkit-font-smoothing: antialiased;
 }
 
 /* General */
 section,
 main {
 	min-height: 100vh;
-	overflow: hidden;
+	// overflow: hidden;
 	&:not(:first-child) {
 		margin-top: 4rem;
 	}
 }
 
+body::-webkit-scrollbar {
+	width: 0.35em;
+}
+
+body::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+	background-color: var(--clr-accent-base);
+	border-radius: 0.1875rem;
+	cursor: grab;
+}
+
 .container {
-	width: calc(100% - 2vw);
+	width: calc(100% - 6vw);
 	margin-inline: auto;
 
 	@include mq(sm) {

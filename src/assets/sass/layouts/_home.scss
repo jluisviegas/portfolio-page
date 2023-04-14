@@ -4,15 +4,21 @@
 	position: relative;
 }
 
-.header-menu {
+.header {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding-block: 1rem;
+	padding-block: 2rem;
+}
+
+.nav-links {
+	display: flex;
+	justify-content: center;
+	gap: 1rem;
 }
 .hero-container {
 	display: grid;
-	grid-template-columns: repeat(6, 1fr);
+	grid-template-columns: repeat(auto-fit(6, 1fr));
 	grid-template-rows: repeat(8, 1fr);
 	grid-column-gap: 0px;
 	grid-row-gap: 0px;
@@ -20,9 +26,20 @@
 	height: 100vh;
 	font-size: clamp(2rem, 4vw, 8rem);
 
-	h1 {
-		grid-column: 1/6;
-		grid-row: 6;
+	.hero-name {
+		letter-spacing: -10px;
+		grid-column: 2/8;
+		grid-row: 3;
+	}
+	.hero-title-top {
+		letter-spacing: -10px;
+		grid-column: 3/8;
+		grid-row: 4;
+	}
+	.hero-title-bottom {
+		letter-spacing: -10px;
+		grid-column: 3/8;
+		grid-row: 5;
 	}
 }
 
@@ -86,53 +103,47 @@
 }
 
 .image-header {
-	height: 180px;
-	grid-column: 1/4;
-	grid-row: 2;
+	position: relative;
+	grid-column: 3/5;
+	grid-row: 2 / 6;
+	z-index: -10;
 	img {
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
-		opacity: 0.7;
 		scale: 1;
+		border-radius: 2rem;
 		&:hover {
-			transform: scale(0.8);
+			// transform: scale(0.8);
 		}
 	}
 }
 
 .arrow-wrapper {
+	position: relative;
 	color: var(--clr-neutral-base);
-	font-size: 8rem;
-	grid-column: 7/8;
-	grid-row: 6;
+	width: 10rem;
+	height: 10rem;
+	font-size: 4rem;
+	grid-column: 1/2;
+	grid-row: 5;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	border: 1px solid var(--clr-primary-light);
+
+	&::after {
+		content: '';
+		position: absolute;
+		display: block;
+		inset: 0;
+		background: transparent;
+		border-radius: 50%;
+		border: 1px solid var(--clr-accent-base);
+		width: 100%;
+		height: 100%;
+	}
 
 	svg {
 		animation: fadeBounce 3s infinite;
-	}
-
-	p {
-		width: 12ch;
-		text-transform: uppercase;
-	}
-}
-
-.blinders-wrapper {
-	position: absolute;
-	display: flex;
-	top: 0;
-	width: 100%;
-	height: 100vh;
-	z-index: 10;
-
-	.blinder {
-		background: var(--clr-primary-dark);
-		height: 100vh;
-		flex-grow: 1;
-		transform-origin: top;
 	}
 }

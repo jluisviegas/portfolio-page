@@ -16,14 +16,23 @@ import Button from '../components/Button';
 import Socials from '../components/Socials';
 import { i18next as lng } from '../translate/i18n';
 
+function useParallax(value, distance) {
+	return useTransform(value, [0, 1], [-distance, distance]);
+}
+
 const Contact = () => {
 	const form = useRef(null);
 	const hRef = useRef(null);
 	const cRef = useRef(null);
 	const isInView = useInView(hRef, { once: false });
+	const sectionRef = useRef(null);
 
-	const { scrollYProgress } = useScroll();
-	const y = useTransform(scrollYProgress, [0, 0], [0, 0]);
+	const { scrollYProgress } = useScroll({
+		target: sectionRef,
+		offset: ['start end', 'end end'],
+	});
+	const opacitySection = useTransform(scrollYProgress, [0.1, 0.5], [0.2, 1]);
+	const y = useParallax(scrollYProgress, 60);
 
 	const sendEmail = (e) => {
 		e.preventDefault();
@@ -39,15 +48,27 @@ const Contact = () => {
 	};
 
 	return (
-		<section className="relative" id="contact-section" ref={hRef}>
+		<m.section
+			className="relative"
+			id="contact-section"
+			ref={sectionRef}
+			style={{ opacity: opacitySection }}
+		>
 			{/* Section Header */}
-			<div className="section-header">
+			<m.div className="section-header" style={{ y }}>
 				<div className="big-header">{lng.t('buttons.contact')}</div>
-			</div>
+			</m.div>
 
-			<m.div className="contact-container" style={{ y }}>
+			<m.div
+				ref={cRef}
+				className="contact-container"
+				initial="offscreen"
+				whileInView="onscreen"
+				viewport={{ once: true, amount: 0 }}
+				variants={cardAnimated}
+			>
 				{/* Contact Info */}
-				<div className="contact-bg-info ">
+				<div className="contact-bg-info">
 					<div className="contact-info">
 						<m.div
 							className="info-option"
@@ -127,7 +148,7 @@ const Contact = () => {
 					</div>
 				</form>
 			</m.div>
-		</section>
+		</m.section>
 	);
 };
 

@@ -1,0 +1,9 @@
+.logo {
+	position: relative;
+	z-index: 5;
+	span {
+		font-size: var(--fs-500);
+		color: var(--clr-neutral-dark);
+		letter-spacing: -1.5px;
+	}
+}

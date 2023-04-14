@@ -31,14 +31,14 @@ const Loader = ({ loading }) => {
 	return (
 		<div className="loading">
 			<m.svg
-				width="55"
-				height="70"
-				viewBox="0 0 55 70"
+				width="150"
+				height="150"
+				viewBox="0 0 150 150"
 				xmlns="http://www.w3.org/2000/svg"
 				className="item"
 			>
 				<m.path
-					d="M10.816 63.52H30.912V68H5.824V25.76H10.816V63.52Z"
+					d="M3.87525 18.8571H10.5L11.5 22H0V0L3.87525 1V18.8571Z"
 					variants={icon}
 					initial="hidden"
 					animate="visible"
@@ -48,7 +48,7 @@ const Loader = ({ loading }) => {
 					}}
 				/>
 				<m.path
-					d="M31.144 59.704H29.352L10.984 16.76H16.552L30.248 49.848L43.944 16.76H49.512L31.144 59.704Z"
+					d="M15.3282 22.1111L4.5 1.11111L9 0.111112L12 6.61111L15.3282 13.5L19 6.61111L22 0.111112L27 1.11111L15.3282 22.1111Z"
 					variants={icon}
 					initial="hidden"
 					animate="visible"
@@ -57,8 +57,18 @@ const Loader = ({ loading }) => {
 						fill: { duration: 4, ease: [1, 0, 0.8, 1] },
 					}}
 				/>
+				<m.path
+					d="M25 20C25 21.1046 24.1046 22 23 22C21.8954 22 21 21.1046 21 20C21 18.8954 21.8954 18 23 18C24.1046 18 25 18.8954 25 20Z"
+					variants={icon}
+					initial="hidden"
+					animate="visible"
+					fill="#c5a47e"
+					transition={{
+						default: { duration: 4, ease: 'easeInOut' },
+						fill: { duration: 4, ease: [1, 0, 0.8, 1] },
+					}}
+				/>
 			</m.svg>
-
 			<m.small>{rounded}</m.small>
 		</div>
 	);

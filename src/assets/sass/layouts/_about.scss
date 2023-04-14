@@ -1,49 +1,62 @@
 @use '../abstracts' as *;
 
-.about-section {
-	display: flex;
-	justify-content: center;
-	position: relative;
-	background-color: var(--clr-neutral-base);
-}
 .about-container {
 	display: flex;
 	flex-direction: column;
-	gap: 6rem;
+	justify-content: center;
+	// align-items: center;
+
 	@include mq(lg) {
 		// flex-direction: row;
 	}
 }
 
 .about-content {
+	position: relative;
 	display: flex;
-	flex-wrap: wrap;
 	justify-content: center;
-	margin-bottom: 3rem;
-	padding: 2rem;
+	margin-block: 6rem;
 }
 
 .about-description {
 	display: flex;
-	flex-direction: column;
+	justify-content: center;
 	gap: 3rem;
-	margin: 0 auto;
-	.left-col {
-		width: 40%;
+	.content-right-col {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+		width: 50%;
+		small {
+			color: var(--clr-primary-light);
+			text-transform: uppercase;
+			letter-spacing: 2px;
+		}
 	}
-	.right-col {
-		width: 40%;
-		margin-left: auto;
+	.content-left-col {
+		small a {
+			color: var(--clr-accent-base);
+			text-transform: uppercase;
+			letter-spacing: 2px;
+		}
 	}
 
 	p {
-		color: var(--clr-primary-base);
+		color: var(--clr-neutral-base);
 		line-height: 2rem;
 	}
 	span {
-		color: var(--clr-accent-base);
+		color: var(--clr-neutral-dark);
 		font-size: var(--fs-400);
 	}
+}
+
+.about-big-text {
+	font-family: var(--ff-montreal);
+	font-size: calc(var(--fs-800) * 2.5);
+	opacity: 0.04;
+	color: var(--clr-neutral-base);
+	letter-spacing: -8px;
 }
 
 .language-cards {
