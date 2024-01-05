@@ -16,20 +16,20 @@
 }
 
 .separator {
-	content: '';
-	border: 1.5px solid var(--clr-primary-light);
-	margin-bottom: 0.5rem;
-	opacity: 0.5;
+	height: 2px;
+	background: var(--clr-accent-base);
 }
 
 .section-header {
-	font-family: var(--ff-antique);
-	font-size: calc(var(--fs-800) * 2);
+	font-family: var(--ff-fig);
+	font-size: calc(var(--fs-800) * 2.5);
 	padding: 8rem 0 4rem 0;
+	font-weight: 700;
+	text-transform: uppercase;
 }
 
 .big-header {
-	opacity: 0.04;
+	opacity: 0.03;
 	color: var(--clr-neutral-base);
 	letter-spacing: -8px;
 }

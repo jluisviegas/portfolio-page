@@ -19,8 +19,8 @@ html {
 /* General */
 section,
 main {
-	min-height: 100vh;
-	// overflow: hidden;
+	// min-height: 100vh;
+	overflow: hidden;
 	&:not(:first-child) {
 		margin-top: 4rem;
 	}
@@ -44,12 +44,12 @@ body::-webkit-scrollbar-thumb {
 	width: calc(100% - 6vw);
 	margin-inline: auto;
 
-	@include mq(sm) {
+	@include mq(md) {
 		width: calc(100% - 12vw);
 	}
 }
 .container-small {
-	width: calc(100% - 17vw);
+	width: calc(100% - 6vw);
 	margin-inline: auto;
 	transition: 200ms;
 

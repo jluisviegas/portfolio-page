@@ -19,7 +19,7 @@ const icon = {
 	},
 };
 
-const Loader = ({ loading }) => {
+const Loader = () => {
 	const count = useMotionValue(0);
 	const rounded = useTransform(count, Math.round);
 
@@ -31,15 +31,16 @@ const Loader = ({ loading }) => {
 	return (
 		<div className="loading">
 			<m.svg
-				width="150"
-				height="150"
-				viewBox="0 0 150 150"
+				width="60"
+				height="60"
+				viewBox="0 0 27 23"
 				xmlns="http://www.w3.org/2000/svg"
 				className="item"
 			>
 				<m.path
 					d="M3.87525 18.8571H10.5L11.5 22H0V0L3.87525 1V18.8571Z"
 					variants={icon}
+					className="item-1"
 					initial="hidden"
 					animate="visible"
 					transition={{

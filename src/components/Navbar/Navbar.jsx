@@ -1,6 +1,6 @@
 import { motion as m, useCycle } from 'framer-motion';
 import * as React from 'react';
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { i18next as lng } from '../../translate/i18n';
 import { MenuToggle } from './MenuToggle';
 import { Navigation } from './Navigation';
@@ -30,9 +30,12 @@ const sidebar = {
 const Nav = () => {
 	const [isOpen, toggleOpen] = useCycle(false, true);
 	const containerRef = useRef(null);
-	isOpen
-		? (document.body.style.overflow = 'hidden')
-		: (document.body.style.overflow = 'auto');
+
+	useEffect(() => {
+		isOpen
+			? (document.body.style.overflow = 'hidden')
+			: (document.body.style.overflow = 'auto');
+	});
 
 	return (
 		<m.nav

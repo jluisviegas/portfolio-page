@@ -1,17 +1,13 @@
-:root {
-	--color-icon: #535c68;
-	--social-icon1: #e4405f;
-	--social-icon2: #3b5999;
-	--social-icon3: #e4405f;
-	--social-icon4: #cd201f;
-	--social-icon5: #0077b5;
+.icon-list-nav {
+	position: absolute;
+	// top: 25rem;
+	left: -1rem;
+	max-width: 35rem;
+	display: flex;
+	// justify-content: space-between;
 }
 
-.icon-list {
-	position: absolute;
-	top: 30rem;
-	left: 0;
-	max-width: 50rem;
+.icon-list-footer {
 	display: flex;
 	justify-content: space-between;
 }
@@ -22,11 +18,11 @@
 
 .icon-link {
 	display: inline-flex;
-	font-size: 3rem;
+	font-size: 1.3rem;
 	text-decoration: none;
-	color: var(--color-icon);
-	width: 6rem;
-	height: 6rem;
+	color: #535c68;
+	width: 3rem;
+	height: 3rem;
 	transition: 0.5s linear;
 	position: relative;
 	z-index: 1;
@@ -44,12 +40,9 @@
 .icon-link::before {
 	content: '';
 	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	width: 6rem;
-	height: 6rem;
+	inset: 0;
+	width: 3rem;
+	height: 3rem;
 	background: #000;
 	border-radius: 50%;
 	z-index: -1;
@@ -62,13 +55,13 @@
 }
 
 .icon-item:nth-child(1) a:hover:before {
-	background: var(--social-icon1);
+	background: #e4405f;
 }
 
 .icon-item:nth-child(2) a:hover:before {
-	background: var(--social-icon2);
+	background: #444444;
 }
 
 .icon-item:nth-child(3) a:hover:before {
-	background: var(--social-icon3);
+	background: #0077b5;
 }

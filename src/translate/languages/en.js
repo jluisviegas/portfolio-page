@@ -13,7 +13,7 @@ const messages = {
 			headers: {
 				dev1: 'Frontend',
 				dev2: 'Developer',
-				about: 'About',
+				about: 'About me',
 				hab: 'Skills',
 				portfolio: 'Portfolio',
 				contact: 'Contact Me',

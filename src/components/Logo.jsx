@@ -1,28 +1,35 @@
 import { motion as m } from 'framer-motion';
 import React from 'react';
 
-const Logo = () => {
+const Logo = ({ size }) => {
 	return (
-		<div className="logo">
+		<m.div
+			className="logo"
+			whileHover={{ scale: 1.1 }}
+			transition={{ type: 'spring', stiffness: 200, bounce: 0.3 }}
+		>
 			<a href="#">
 				<m.svg
-					width="50"
-					height="50"
+					width={`${size}`}
+					height={`${size}`}
 					viewBox="0 0 27 23"
 					fill="none"
 					xmlns="http://www.w3.org/2000/svg"
-					initial={{ opacity: 0, scale: 0.5, x: -80 }}
-					animate={{ opacity: 1, scale: 1, x: 0 }}
+					initial={{ opacity: 0, scale: 0.5, y: -50 }}
+					animate={{ opacity: 1, scale: 1, y: 0 }}
 					transition={{
-						duration: 0.8,
-						delay: 0.5,
-						ease: [0, 0.71, 0.2, 1.01],
+						type: 'spring',
+						// duration: 0.8,
+						stiffness: 200,
+						restDelta: 2,
+						// ease: [0, 0.71, 0.2, 1.01],
 					}}
 				>
 					<path
 						d="M3.87525 18.8571H10.5L11.5 22H0V0L3.87525 1V18.8571Z"
-						fill="#f0efe9"
+						fill="#f1efe9"
 					/>
+
 					<path
 						d="M15.3282 22.1111L4.5 1.11111L9 0.111112L12 6.61111L15.3282 13.5L19 6.61111L22 0.111112L27 1.11111L15.3282 22.1111Z"
 						fill="#C5A47E"
@@ -33,7 +40,7 @@ const Logo = () => {
 					/>
 				</m.svg>
 			</a>
-		</div>
+		</m.div>
 	);
 };
 

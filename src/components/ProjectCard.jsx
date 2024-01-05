@@ -1,63 +1,69 @@
 import { motion as m, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { BsArrowUpRightSquare } from 'react-icons/bs';
 import { FiGithub } from 'react-icons/fi';
-import { Tilt } from 'react-tilt';
 import projectsData from '../Data';
-import { cardAnimated, defaultOptions, itemAnimated } from '../animation';
+import { cardAnimated, itemAnimated } from '../animation';
+import { useParallax } from '../layouts/Projects';
 import { i18next as lng } from '../translate/i18n';
-import Button from './Button';
 
 const ProjectCard = () => {
+	const [activeItem, setActiveItem] = useState(3);
 	const ref = useRef(null);
 
 	const { scrollYProgress } = useScroll({
 		target: ref,
 		offset: ['start end', 'end end'],
 	});
+
+	const y = useParallax(scrollYProgress, 60);
+	const yr = useParallax(scrollYProgress, -40);
+
 	return (
-		<div className="projects-container container ">
-			{projectsData.map(({ id, image, title, github, description, stack }) => {
-				return (
-					<ul key={id} className="projects-list">
-						<div
-							className="project-bg"
-							style={{ backgroundImage: `url(${image})` }}
-						></div>
-						<m.li
-							className="project"
-							ref={ref}
-							initial="offscreen"
-							whileInView="onscreen"
-							viewport={{ once: true, amount: 0 }}
-							variants={cardAnimated}
-						>
-							<div className="project-content">
-								<h4 className="uppercase">
-									<a href="">{title}</a>
-								</h4>
-								<h4>
-									<i>{title}</i>
-								</h4>
-								<p>{description}</p>
-								<div className="project-tech">
-									<small>{stack.lng1}</small>
-									<small>{stack.lng2}</small>
-									<small>{stack.lng3}</small>
+		<div className="projects-container container-small">
+			<ul className="projects-list">
+				{projectsData.map(
+					({ id, image, title, github, description, stack, number }) => {
+						return (
+							<m.li
+								className="project"
+								ref={ref}
+								key={id}
+								onClick={() => setActiveItem(id)}
+								aria-current={activeItem === id}
+								initial="offscreen"
+								whileInView="onscreen"
+								viewport={{ once: true, amount: 0 }}
+								variants={cardAnimated}
+							>
+								<div className="project-image">
+									<img className="project-number" src={number}></img>
+
+									<img className="image" src={image} alt="" />
+									<div className="project-links">
+										<a href={github} aria-label="GitHub Link">
+											<FiGithub />
+										</a>
+									</div>
+									<div className="project-content">
+										<h5>
+											<a href="">
+												<i>{title}</i>
+											</a>
+										</h5>
+										<p>{description}</p>
+										<div className="project-tech">
+											<small>{stack.lng1} ●</small>
+											<small>{stack.lng2} ●</small>
+											<small>{stack.lng3}</small>
+										</div>
+									</div>
 								</div>
-							</div>
-							<Tilt className="project-image" options={defaultOptions}>
-								<img src={image} alt="" />
-								<div className="project-links">
-									<a href={github} aria-label="GitHub Link">
-										<FiGithub />
-									</a>
-								</div>
-							</Tilt>
-						</m.li>
-					</ul>
-				);
-			})}
+							</m.li>
+						);
+					}
+				)}
+			</ul>
 		</div>
 	);
 };

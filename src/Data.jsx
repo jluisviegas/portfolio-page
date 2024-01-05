@@ -1,5 +1,9 @@
 import { DiReact } from 'react-icons/di';
 import {
+	card1,
+	card2,
+	card3,
+	card4,
 	css,
 	graphql,
 	html,
@@ -11,8 +15,6 @@ import {
 	number2,
 	number3,
 	number4,
-	project1,
-	project2,
 	react,
 	sass,
 	tailwind,
@@ -23,7 +25,7 @@ import {
 const projectsData = [
 	{
 		id: 1,
-		image: project1,
+		image: card1,
 		title: 'Personal Page',
 		github: 'https://github.com',
 		description: 'Página para apresentação e exposição de projetos pessoais ',
@@ -32,7 +34,7 @@ const projectsData = [
 	},
 	{
 		id: 2,
-		image: project2,
+		image: card2,
 		title: 'HS Maia Distribuidora',
 		github: 'https://github.com',
 		description:
@@ -42,7 +44,7 @@ const projectsData = [
 	},
 	{
 		id: 3,
-		image: project1,
+		image: card3,
 		title: 'Gabi Pães e Cia',
 		github: 'https://github.com',
 		description: 'https://dribble.com/shots',
@@ -52,7 +54,7 @@ const projectsData = [
 	},
 	{
 		id: 4,
-		image: project1,
+		image: card4,
 		title: 'Translator Google API',
 		github: 'hhtps://github.com',
 		description: 'Simple Translator using Google Translate API',

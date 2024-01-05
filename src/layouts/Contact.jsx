@@ -1,24 +1,11 @@
 import emailjs from '@emailjs/browser';
-import {
-	motion as m,
-	useInView,
-	useMotionValue,
-	useScroll,
-	useSpring,
-	useTransform,
-} from 'framer-motion';
+import { motion as m, useInView, useScroll, useTransform } from 'framer-motion';
 import React, { useRef } from 'react';
-import { BsWhatsapp } from 'react-icons/bs';
-import { FiArrowDownRight, FiArrowUpRight } from 'react-icons/fi';
-import { MdOutlineArrowForwardIos, MdOutlineEmail } from 'react-icons/md';
+import { IoMdArrowUp } from 'react-icons/io';
 import { cardAnimated, itemAnimated } from '../animation';
 import Button from '../components/Button';
-import Socials from '../components/Socials';
 import { i18next as lng } from '../translate/i18n';
-
-function useParallax(value, distance) {
-	return useTransform(value, [0, 1], [-distance, distance]);
-}
+import { useParallax } from './Projects';
 
 const Contact = () => {
 	const form = useRef(null);
@@ -32,7 +19,7 @@ const Contact = () => {
 		offset: ['start end', 'end end'],
 	});
 	const opacitySection = useTransform(scrollYProgress, [0.1, 0.5], [0.2, 1]);
-	const y = useParallax(scrollYProgress, 60);
+	const y = useParallax(scrollYProgress, 120);
 
 	const sendEmail = (e) => {
 		e.preventDefault();
@@ -54,99 +41,82 @@ const Contact = () => {
 			ref={sectionRef}
 			style={{ opacity: opacitySection }}
 		>
-			{/* Section Header */}
-			<m.div className="section-header" style={{ y }}>
-				<div className="big-header">{lng.t('buttons.contact')}</div>
-			</m.div>
-
 			<m.div
 				ref={cRef}
-				className="contact-container"
+				className="contact"
 				initial="offscreen"
 				whileInView="onscreen"
 				viewport={{ once: true, amount: 0 }}
 				variants={cardAnimated}
 			>
-				{/* Contact Info */}
-				<div className="contact-bg-info">
-					<div className="contact-info">
-						<m.div
-							className="info-option"
-							ref={cRef}
-							initial="offscreen"
-							whileInView="onscreen"
-							viewport={{ once: true, amount: 0 }}
-							variants={cardAnimated}
-						>
-							<MdOutlineEmail />
+				{/* Contact Form */}
+				<div className="form-col">
+					<m.div
+						className="header-wrapper"
+						ref={cRef}
+						initial="offscreen"
+						whileInView="onscreen"
+						viewport={{ once: false, amount: 0 }}
+						variants={cardAnimated}
+					>
+						<h2>Get in touch.</h2>
+					</m.div>
+					<form ref={form} onSubmit={sendEmail}>
+						<input
+							type="text"
+							name="name"
+							placeholder={lng.t('contact.name')}
+							required
+						/>
+						<input type="email" name="email" placeholder="Email" required />
 
-							<m.div className="info-title" variants={itemAnimated}>
-								<h5>Email</h5>
-							</m.div>
-							<m.div className="info-desc" variants={itemAnimated}>
-								<p>jlviegass@gmail.com</p>
+						<div className="text-message">
+							<Button className="btn-form" name="Enviar" />
+
+							<textarea
+								className="ff-headers"
+								name="message"
+								rows="6"
+								placeholder="Mensagem"
+							></textarea>
+						</div>
+					</form>
+				</div>
+
+				{/* Contact Information */}
+				<div className="contact-col">
+					<div className="info-wrapper">
+						<div className="info-option">
+							<span>Email</span>
+							<div className="info-desc">
 								<a href="mailto: jluisviegas@hotmail.com" target="_blank">
-									<p>{lng.t('contact.email')}</p>
-									<FiArrowUpRight />
+									<p>jlviegass@gmail.com</p>
 								</a>
-							</m.div>
-						</m.div>
+							</div>
+						</div>
 
-						<m.div
-							className="info-option"
-							ref={cRef}
-							initial="offscreen"
-							whileInView="onscreen"
-							viewport={{ once: true, amount: 0 }}
-							variants={cardAnimated}
-						>
-							<BsWhatsapp />
-
-							<m.div className="info-title" variants={itemAnimated}>
-								<h5>Phone</h5>
-							</m.div>
-							<m.div className="info-desc" variants={itemAnimated}>
-								<p>+55 98 99171 2252</p>
+						<div className="info-option">
+							<div className="info-title">
+								<span>Phone</span>
+							</div>
+							<div className="info-desc">
 								<a
 									href="https://api.whatsapp.com/send?phone=5598991712252"
 									target="_blank"
 								>
-									<p>{lng.t('contact.wp')}</p>
-									<FiArrowUpRight />
+									<p>+55 98 99171 2252</p>
 								</a>
-							</m.div>
-						</m.div>
-						<Socials />
+							</div>
+						</div>
 					</div>
+					<m.div
+						className="contact-arrow"
+						whileHover={{ scale: 0.85 }}
+						transition={{ type: 'spring', stiffness: 200, bounce: 0.25 }}
+					>
+						<IoMdArrowUp />
+					</m.div>
 				</div>
-
-				{/* Contact Form */}
-				<form ref={form} onSubmit={sendEmail}>
-					<div className="contact-message">
-						<FiArrowDownRight />
-						<h3 className="text-right">
-							Diga
-							<i> Olá!</i>
-						</h3>
-					</div>
-
-					<input
-						type="text"
-						name="name"
-						placeholder={lng.t('contact.name')}
-						required
-					/>
-					<input type="email" name="email" placeholder="Email" required />
-					<textarea
-						className="ff-headers"
-						name="message"
-						rows="3"
-						placeholder="Mensagem"
-					></textarea>
-					<div className="submit">
-						<Button type="submit" name={lng.t('buttons.msg')} className="btn" />
-					</div>
-				</form>
 			</m.div>
 		</m.section>
 	);

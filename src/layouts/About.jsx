@@ -3,37 +3,51 @@ import { useRef } from 'react';
 import { FiArrowUpRight } from 'react-icons/fi';
 import { skillsData } from '../Data';
 import { skills } from '../assets/images';
-import ME from '../assets/images/me.png';
-
+import LogoSlider from '../components/Slider';
 import { i18next as lng } from '../translate/i18n';
+import { useParallax } from './Projects';
 
 const About = () => {
+	const sectionRef = useRef(null);
+
+	const { scrollYProgress } = useScroll({
+		target: sectionRef,
+		offset: ['start end', 'end end'],
+	});
+	const opacitySection = useTransform(scrollYProgress, [0.1, 0.5], [0.2, 1]);
+	const y = useParallax(scrollYProgress, -60);
+
 	return (
-		<section className="about-section" id="about-section">
+		<m.section
+			className="about-section"
+			id="about-section"
+			ref={sectionRef}
+			style={{
+				opacity: opacitySection,
+				y,
+			}}
+		>
 			{/* Section Header */}
+			<m.div className="section-header" style={{ y }}>
+				<div className="big-header">{lng.t('headers.about')}</div>
+			</m.div>
 
 			<div className="about-container">
 				{/* About Descriprion */}
-				<div className="about-content container">
+				<div className="about-content">
 					<div className="about-description container">
 						<div className="content-left-col">
-							<div className="image-header">
-								<img src={ME} alt="Luis Viegas" />
-							</div>
-							<small>
-								<a href="mailto: jluisviegas@hotmail.com" target="_blank">
-									Resume
-									<FiArrowUpRight />
-								</a>
-							</small>
+							<small> Hello! </small>
+							<h3 className="text-right">
+								My name is
+								<i> Luis Viegas</i>
+							</h3>
+							<h3 className="text-right">
+								I am a<i>Web Developer</i>
+							</h3>
 						</div>
 
 						<div className="content-right-col">
-							<small>Luis Viegas</small>
-							<h3 className="text-right">
-								Sobre
-								<i> Mim!</i>
-							</h3>
 							<p>
 								<span>{lng.t('description.span1')}</span>
 								{lng.t('description.about1')}
@@ -48,19 +62,9 @@ const About = () => {
 				</div>
 
 				{/* Skill Icons */}
-
-				<div className="language-cards container-small">
-					<div className="skills">
-						<img src={skills} alt="" className="rotating " />
-					</div>
-					{skillsData.map((skill) => (
-						<div className="language-card" key={skill.id}>
-							<img src={skill.skill} alt="" />
-						</div>
-					))}
-				</div>
 			</div>
-		</section>
+			<LogoSlider />
+		</m.section>
 	);
 };
 

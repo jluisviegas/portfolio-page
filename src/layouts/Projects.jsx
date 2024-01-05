@@ -3,9 +3,9 @@ import { useRef } from 'react';
 import ProjectCard from '../components/ProjectCard';
 import { i18next as lng } from '../translate/i18n';
 
-function useParallax(value, distance) {
+export const useParallax = (value, distance) => {
 	return useTransform(value, [0, 1], [-distance, distance]);
-}
+};
 
 const Projects = () => {
 	const sectionRef = useRef(null);

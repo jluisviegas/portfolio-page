@@ -2,10 +2,9 @@
 
 body {
 	font-size: var(--fs-400);
-	font-family: var(--ff-primary);
+	font-family: var(--ff-matter);
 	background-color: var(--clr-primary-base);
 	letter-spacing: -0.5px;
-	overflow-x: hidden;
 }
 
 h1,
@@ -13,14 +12,13 @@ h2,
 h3 {
 	font-weight: normal;
 	line-height: 1;
-	font-family: var(--ff-bodoni);
+	font-family: var(--ff-fig);
 	color: var(--clr-neutral-base);
 	transition: font-size 0.25s linear;
 }
-
 h1 {
-	font-size: calc(var(--fs-800) * 1.7);
-	font-family: var(--ff-antique);
+	font-size: clamp(3.5rem, 8vw, 10rem);
+	letter-spacing: -4.2px;
 }
 
 h2 {
@@ -32,38 +30,36 @@ h3 {
 }
 
 h4 {
-	font-size: var(--fs-500);
+	font-size: var(--fs-600);
 	color: var(--clr-neutral-base);
-	filter: blur(0.6px);
 	font-weight: 400;
-	font-family: var(--ff-bodoni);
 	transition: font-size 0.25s linear;
+	// text-transform: uppercase;
+	// letter-spacing: 3px;
 }
 
 h5 {
-	font-size: var(--fs-400);
+	font-size: var(--fs-500);
 	color: var(--clr-neutral-base);
 	font-weight: 500;
-	font-family: var(--ff-primary);
-	letter-spacing: 3px;
-	text-transform: uppercase;
+	font-family: var(--ff-matter);
 	transition: font-size 0.25s linear;
 }
 
 p {
 	font-size: var(--fs-400);
-	font-family: var(--ff-montreal);
+	font-family: var(--ff-matter);
 	transition: font-size 0.25s linear;
 }
 
 small {
-	font-size: var(--fs-300);
+	// font-size: var(--fs-400);
 	font-family: var(--ff-apercu);
+	color: var(--clr-neutral-base);
 }
 span {
-	font-family: var(--ff-antique);
+	font-family: var(--ff-matter);
 	font-size: var(--fs-300);
-	color: var(--clr-accent-base);
 }
 
 // a {
@@ -78,8 +74,9 @@ span {
 // }
 
 ::placeholder {
-	color: var(--clr-neutral-dark);
+	color: var(--clr-primary-light);
 	font-family: var(--ff-apercu);
+	font-size: var(--fs-400);
 }
 
 .right {

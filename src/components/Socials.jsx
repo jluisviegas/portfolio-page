@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Socials = () => {
+const Socials = ({ className }) => {
 	return (
 		<div>
-			<ul className="icon-list">
+			<ul className={`${className}`}>
 				<li className="icon-item">
 					<a
 						aria-label="instagram"

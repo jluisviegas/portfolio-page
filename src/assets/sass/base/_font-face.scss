@@ -1,13 +1,8 @@
 @font-face {
 	font-family: 'Antique Olive';
-	font-style: bold;
-	font-weight: 700;
+	font-style: normal; // or italic if needed
+	font-weight: 700; // instead of 'bold'
 	src: url(/src/assets/fonts/Antique-Olive-Bold.ttf) format('truetype');
-}
-
-@font-face {
-	font-family: 'Bodoni';
-	src: url(/src/assets/fonts/bodoni-seventytwo-itc-book.ttf) format('truetype');
 }
 
 @font-face {
@@ -16,9 +11,8 @@
 }
 
 @font-face {
-	font-family: 'Montreal';
-	src: url(/src/assets/fonts/NeueMontreal-Regular.otf) format('opentype');
+	font-family: 'Matter';
+	src: url(/src/assets/fonts/Matter-Regular.otf) format('opentype');
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;700&display=swap');

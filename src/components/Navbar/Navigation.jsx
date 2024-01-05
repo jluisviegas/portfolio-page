@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import * as React from 'react';
+import Button from '../Button';
 import LanguageSelector from '../LanguageSelector';
 import Socials from '../Socials';
 import { MenuItem } from './MenuItem';
@@ -28,8 +29,7 @@ export const Navigation = ({ toggle }) => (
 				<MenuItem i={i.id} key={i.id} name={i.link} />
 			</a>
 		))}
-		<Socials />
-		<LanguageSelector />
+		<Socials className="icon-list-nav" />
 	</motion.ul>
 );
 
