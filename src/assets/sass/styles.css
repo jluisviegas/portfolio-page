@@ -181,7 +181,7 @@ ul {
 }
 :root {
   --clr-primary-base: hsl(240, 24%, 8%);
-  --clr-primary-light: hsl(267, 11%, 15%);
+  --clr-primary-light: hsl(270, 7%, 24%);
   --clr-primary-dark: hsl(224, 52%, 4%);
   --clr-accent-base: hsl(346, 100%, 50%);
   --clr-accent-light: hsl(13, 100%, 55%);
@@ -703,7 +703,7 @@ nav li {
 .about-description {
   display: flex;
   justify-content: center;
-  gap: 3rem;
+  gap: 6rem;
 }
 .about-description .content-right-col {
   display: flex;
@@ -716,7 +716,21 @@ nav li {
   text-transform: uppercase;
   letter-spacing: 2px;
 }
-.about-description .content-left-col small a {
+.about-description .content-left-col {
+  display: flex;
+  flex-direction: column;
+  width: 60ch;
+  gap: 1rem;
+}
+.about-description .content-left-col .text-right {
+  color: var(--clr-primary-light);
+  font-weight: 500;
+}
+.about-description .content-left-col span {
+  font-size: var(--fs-600);
+  color: var(--clr-neutral-base);
+}
+.about-description .content-left-col small {
   color: var(--clr-accent-base);
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -738,48 +752,23 @@ nav li {
   letter-spacing: -8px;
 }
 
-.language-cards {
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  opacity: 0.7;
-  padding: 2rem;
-}
-
-.skills {
-  position: absolute;
-  left: -3vw;
-}
-.skills img {
-  width: 100px;
-}
-
-.language-card {
-  position: relative;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.language-card img {
-  width: clamp(80px, 10vw, 100px);
-  padding: 1rem;
-  filter: grayscale(1);
-  transition: filter 0.5s ease-in-out;
-}
-.language-card:hover img {
-  filter: grayscale(0);
-  cursor: default;
-  transition: filter 0.5s ease-in-out;
-}
-
 .slide-wrapper {
-  margin-top: 6rem;
+  margin-top: 8rem;
 }
 
 .logo-slider {
   filter: grayscale(1);
   width: 5rem;
+}
+.logo-slider:hover {
+  filter: none;
+}
+
+.about-socials {
+  border: solid 1px var(--clr-accent-base);
+  border-radius: 2rem;
+  padding: 1rem;
+  width: 2rem;
 }
 
 .projects-list {

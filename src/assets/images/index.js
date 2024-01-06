@@ -1,5 +1,6 @@
 import android from './android.png';
 import api from './api.png';
+import astro from './astro.png';
 import close from './close.svg';
 import css from './css.png';
 import expo from './expo.png';
@@ -17,6 +18,7 @@ import number3 from './n03.svg';
 import number4 from './n04.svg';
 import next from './next.png';
 import node from './node.png';
+import prisma from './prisma.png';
 import react from './react.png';
 import card2 from './renata-page.png';
 import sass from './sass.png';
@@ -28,6 +30,7 @@ import wordpress from './wordpress.png';
 export {
 	android,
 	api,
+	astro,
 	card1,
 	card2,
 	card3,
@@ -46,6 +49,7 @@ export {
 	number2,
 	number3,
 	number4,
+	prisma,
 	react,
 	sass,
 	skills,

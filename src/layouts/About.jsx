@@ -4,6 +4,7 @@ import { FiArrowUpRight } from 'react-icons/fi';
 import { skillsData } from '../Data';
 import { skills } from '../assets/images';
 import LogoSlider from '../components/Slider';
+import Socials from '../components/Socials';
 import { i18next as lng } from '../translate/i18n';
 import { useParallax } from './Projects';
 
@@ -29,7 +30,9 @@ const About = () => {
 		>
 			{/* Section Header */}
 			<m.div className="section-header" style={{ y }}>
-				<div className="big-header">{lng.t('headers.about')}</div>
+				<div className="big-header">
+					About <i>Me</i>
+				</div>
 			</m.div>
 
 			<div className="about-container">
@@ -37,25 +40,46 @@ const About = () => {
 				<div className="about-content">
 					<div className="about-description container">
 						<div className="content-left-col">
-							<small> Hello! </small>
+							<small> &lt;p&gt; Hi, There! &lt;/p&gt; </small>
 							<h3 className="text-right">
-								My name is
-								<i> Luis Viegas</i>
-							</h3>
-							<h3 className="text-right">
-								I am a<i>Web Developer</i>
+								My name is <span>Luis Viegas</span>, Brazilian
+								<span> Web Developer </span>
+								devoted to the craft of <span>building websites</span> and
+								create enjoyable experiences.
 							</h3>
 						</div>
 
 						<div className="content-right-col">
 							<p>
-								<span>{lng.t('description.span1')}</span>
-								{lng.t('description.about1')}
+								Welcome to my professional journey! I hold an MBA with a
+								specialization in Business and Marketing, and my career has been
+								a dynamic blend of impactful roles in both the private and
+								public sectors. Throughout my tenure in the vibrant city of São
+								Luis - MA, I've consistently taken on management positions and
+								leadership roles, where I've garnered recognition for developing
+								strategic plans that optimize productivity and enhance
+								organizational effectiveness. My ability to innovate processes
+								and drive positive change has been a consistent theme in my
+								professional endeavors.
 							</p>
 							<p>
-								{lng.t('description.about2')}
-								<span>{lng.t('description.span2')}</span>
-								{lng.t('description.about3')}
+								In a recent chapter of my career, I embraced a transformative
+								experience by relocating to Vancouver, CA, where I delved into
+								the realm of Information Technology. This marked the beginning
+								of my pursuit of a passion long harbored – Web Development. This
+								immersive experience not only broadened my technological skill
+								set but also significantly contributed to refining my
+								proficiency in the English language.
+							</p>
+
+							<p>
+								Technology has always been a driving force in my professional
+								narrative, and my passion lies particularly in full-stack
+								software development, project management, and slowly getting
+								into UI/UX design. I firmly believe in the philosophy of placing
+								humanity at the center of technology. This ethos not only guides
+								my approach to development but also underscores my commitment to
+								fostering positive, user-centric solutions.
 							</p>
 						</div>
 					</div>

@@ -1,6 +1,18 @@
 import React from 'react';
 import Slider from 'react-infinite-logo-slider';
-import { css, html, next, sass, tailwind } from '../assets/images';
+import {
+	astro,
+	css,
+	html,
+	javascript,
+	mysql,
+	next,
+	prisma,
+	react,
+	sass,
+	tailwind,
+	wordpress,
+} from '../assets/images';
 
 const LogoSlider = () => {
 	return (
@@ -26,6 +38,24 @@ const LogoSlider = () => {
 				</Slider.Slide>
 				<Slider.Slide>
 					<img src={sass} alt="any" className="logo-slider" />
+				</Slider.Slide>
+				<Slider.Slide>
+					<img src={react} alt="any" className="logo-slider" />
+				</Slider.Slide>
+				<Slider.Slide>
+					<img src={javascript} alt="any" className="logo-slider" />
+				</Slider.Slide>
+				<Slider.Slide>
+					<img src={astro} alt="any" className="logo-slider" />
+				</Slider.Slide>
+				<Slider.Slide>
+					<img src={prisma} alt="any" className="logo-slider" />
+				</Slider.Slide>
+				<Slider.Slide>
+					<img src={mysql} alt="any" className="logo-slider" />
+				</Slider.Slide>
+				<Slider.Slide>
+					<img src={wordpress} alt="any" className="logo-slider" />
 				</Slider.Slide>
 			</Slider>
 		</div>

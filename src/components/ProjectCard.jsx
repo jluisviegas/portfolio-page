@@ -1,6 +1,5 @@
 import { motion as m, useScroll, useTransform } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
-import { BsArrowUpRightSquare } from 'react-icons/bs';
 import { FiGithub } from 'react-icons/fi';
 import projectsData from '../Data';
 import { cardAnimated, itemAnimated } from '../animation';
