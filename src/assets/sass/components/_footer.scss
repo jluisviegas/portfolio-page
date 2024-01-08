@@ -24,6 +24,13 @@
 	}
 }
 
+.footer-logo {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 2rem;
+	color: var(--clr-neutral-base);
+}
 .footer-info {
 	display: flex;
 	justify-content: center;

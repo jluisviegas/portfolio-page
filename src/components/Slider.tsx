@@ -11,6 +11,7 @@ import {
 	react,
 	sass,
 	tailwind,
+	typescript,
 	wordpress,
 } from '../assets/images';
 
@@ -56,6 +57,9 @@ const LogoSlider = () => {
 				</Slider.Slide>
 				<Slider.Slide>
 					<img src={wordpress} alt="any" className="logo-slider" />
+				</Slider.Slide>
+				<Slider.Slide>
+					<img src={typescript} alt="any" className="logo-slider" />
 				</Slider.Slide>
 			</Slider>
 		</div>

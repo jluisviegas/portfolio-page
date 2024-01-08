@@ -29,15 +29,18 @@
 
 		small {
 			color: var(--clr-primary-light);
-			text-transform: uppercase;
 			letter-spacing: 2px;
 		}
 	}
 	.content-left-col {
 		display: flex;
 		flex-direction: column;
+		justify-content: space-between;
+		border: solid 1px var(--clr-primary-light);
+		border-radius: 2rem;
 		width: 60ch;
 		gap: 1rem;
+		padding: 2rem;
 
 		.text-right {
 			color: var(--clr-primary-light);
@@ -51,7 +54,6 @@
 
 		small {
 			color: var(--clr-accent-base);
-			text-transform: uppercase;
 			letter-spacing: 2px;
 		}
 	}

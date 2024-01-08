@@ -1,15 +1,13 @@
 .icon-list-nav {
 	position: absolute;
-	// top: 25rem;
 	left: -1rem;
 	max-width: 35rem;
 	display: flex;
-	// justify-content: space-between;
 }
 
-.icon-list-footer {
+.icon-list-contact {
 	display: flex;
-	justify-content: space-between;
+	margin-left: -10px;
 }
 
 .icon-item {
@@ -20,7 +18,7 @@
 	display: inline-flex;
 	font-size: 1.3rem;
 	text-decoration: none;
-	color: #535c68;
+	color: var(--clr-neutral-base);
 	width: 3rem;
 	height: 3rem;
 	transition: 0.5s linear;
@@ -55,13 +53,17 @@
 }
 
 .icon-item:nth-child(1) a:hover:before {
-	background: #e4405f;
+	background: #000;
 }
 
 .icon-item:nth-child(2) a:hover:before {
-	background: #444444;
+	background: #e4405f;
 }
 
 .icon-item:nth-child(3) a:hover:before {
+	background: #444444;
+}
+
+.icon-item:nth-child(4) a:hover:before {
 	background: #0077b5;
 }

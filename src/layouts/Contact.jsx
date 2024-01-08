@@ -4,7 +4,7 @@ import React, { useRef } from 'react';
 import { IoMdArrowUp } from 'react-icons/io';
 import { cardAnimated, itemAnimated } from '../animation';
 import Button from '../components/Button';
-import { i18next as lng } from '../translate/i18n';
+import Socials from '../components/Socials';
 import { useParallax } from './Projects';
 
 const Contact = () => {
@@ -36,7 +36,7 @@ const Contact = () => {
 
 	return (
 		<m.section
-			className="relative"
+			className=" container relative"
 			id="contact-section"
 			ref={sectionRef}
 			style={{ opacity: opacitySection }}
@@ -59,25 +59,36 @@ const Contact = () => {
 						viewport={{ once: false, amount: 0 }}
 						variants={cardAnimated}
 					>
-						<h2>Get in touch.</h2>
+						<h2>
+							Get in
+							<i> touch.</i>
+						</h2>
 					</m.div>
 					<form ref={form} onSubmit={sendEmail}>
+						<label htmlFor="">Your name</label>
 						<input
 							type="text"
 							name="name"
-							placeholder={lng.t('contact.name')}
+							placeholder="E.g. John Doe"
 							required
 						/>
-						<input type="email" name="email" placeholder="Email" required />
+						<label htmlFor="">Your email</label>
+
+						<input
+							type="email"
+							name="email"
+							placeholder="E.g. johndoe@gmail.com"
+							required
+						/>
+						<label htmlFor="">Message</label>
 
 						<div className="text-message">
 							<Button className="btn-form" name="Enviar" />
-
 							<textarea
 								className="ff-headers"
 								name="message"
 								rows="6"
-								placeholder="Mensagem"
+								placeholder="Enter your message"
 							></textarea>
 						</div>
 					</form>
@@ -85,37 +96,23 @@ const Contact = () => {
 
 				{/* Contact Information */}
 				<div className="contact-col">
-					<div className="info-wrapper">
-						<div className="info-option">
-							<span>Email</span>
-							<div className="info-desc">
-								<a href="mailto: jluisviegas@hotmail.com" target="_blank">
-									<p>jlviegass@gmail.com</p>
-								</a>
-							</div>
-						</div>
-
-						<div className="info-option">
-							<div className="info-title">
-								<span>Phone</span>
-							</div>
-							<div className="info-desc">
-								<a
-									href="https://api.whatsapp.com/send?phone=5598991712252"
-									target="_blank"
-								>
-									<p>+55 98 99171 2252</p>
-								</a>
-							</div>
-						</div>
+					<div className="contact-text-message">
+						<p>
+							Exploring growth opportunities and connections. <br />
+							Feel free to send a message for collaborations, advice, or just to
+							say hi!
+						</p>
+						<Socials className="icon-list-contact" />
 					</div>
-					<m.div
-						className="contact-arrow"
-						whileHover={{ scale: 0.85 }}
-						transition={{ type: 'spring', stiffness: 200, bounce: 0.25 }}
-					>
-						<IoMdArrowUp />
-					</m.div>
+					<div className="info-wrapper">
+						<m.div
+							className="contact-arrow"
+							whileHover={{ scale: 0.85 }}
+							transition={{ type: 'spring', stiffness: 200, bounce: 0.25 }}
+						>
+							<IoMdArrowUp />
+						</m.div>
+					</div>
 				</div>
 			</m.div>
 		</m.section>

@@ -1,6 +1,5 @@
 import React from 'react';
 import { i18next as lng } from '../translate/i18n';
-import LanguageSelector from './LanguageSelector';
 import Logo from './Logo';
 import Socials from './Socials';
 
@@ -10,10 +9,7 @@ const Footer = () => {
 			<div className="footer-main container">
 				<div className="footer-logo mobile-display">
 					<Logo size="30" />
-				</div>
-				<div className="footer-info">
-					<Socials className="icon-list-footer" />
-					<LanguageSelector />
+					<p>© 2024 | Designed & Developed by Luis Viegas</p>
 				</div>
 			</div>
 		</footer>
