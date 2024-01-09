@@ -19,7 +19,7 @@ html {
 /* General */
 section,
 main {
-	// min-height: 100vh;
+	min-height: fit-content;
 	overflow: hidden;
 	&:not(:first-child) {
 		margin-top: 4rem;

@@ -3,6 +3,7 @@ import Slider from 'react-infinite-logo-slider';
 import {
 	astro,
 	css,
+	framer,
 	html,
 	javascript,
 	mysql,
@@ -19,7 +20,7 @@ const LogoSlider = () => {
 	return (
 		<div className="slide-wrapper">
 			<Slider
-				width="300px"
+				width="250px"
 				duration={40}
 				pauseOnHover={true}
 				blurBorders={true}
@@ -60,6 +61,9 @@ const LogoSlider = () => {
 				</Slider.Slide>
 				<Slider.Slide>
 					<img src={typescript} alt="any" className="logo-slider" />
+				</Slider.Slide>
+				<Slider.Slide>
+					<img src={framer} alt="any" className="logo-slider" />
 				</Slider.Slide>
 			</Slider>
 		</div>

@@ -4,6 +4,7 @@ import astro from './astro.png';
 import close from './close.svg';
 import css from './css.png';
 import expo from './expo.png';
+import framer from './framer.png';
 import card3 from './gabi-page.png';
 import graphql from './graphql.png';
 import html from './html.png';
@@ -38,6 +39,7 @@ export {
 	close,
 	css,
 	expo,
+	framer,
 	graphql,
 	html,
 	javascript,

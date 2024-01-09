@@ -19,7 +19,7 @@ const Projects = () => {
 
 	return (
 		<m.section
-			className="relative"
+			className=""
 			id="portfolio-section"
 			ref={sectionRef}
 			style={{
@@ -29,7 +29,7 @@ const Projects = () => {
 		>
 			{/* Section Header */}
 			<m.div className="section-header" style={{ y }}>
-				<div className="big-header right">{lng.t('headers.projects')}</div>
+				<div className="big-header right">Projects</div>
 			</m.div>
 			<ProjectCard />
 		</m.section>

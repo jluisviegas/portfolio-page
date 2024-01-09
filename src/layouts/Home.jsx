@@ -40,7 +40,7 @@ const Home = () => {
 					</Tilt>
 					<div className="hero-text-wrap">
 						<m.h1 className="hero-name relative" style={{ x: x }}>
-							LUIS VIEGAS	
+							LUIS VIEGAS
 						</m.h1>
 						<m.h1 className="hero-title-top relative" style={{ x: xr }}>
 							web

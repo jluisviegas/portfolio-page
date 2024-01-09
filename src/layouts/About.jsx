@@ -1,11 +1,9 @@
 import { motion as m, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
-import { FiArrowUpRight } from 'react-icons/fi';
+import { IoMdArrowDown } from 'react-icons/io';
 import { skillsData } from '../Data';
 import { skills } from '../assets/images';
 import LogoSlider from '../components/Slider';
-import Socials from '../components/Socials';
-import { i18next as lng } from '../translate/i18n';
 import { useParallax } from './Projects';
 
 const About = () => {
@@ -40,13 +38,26 @@ const About = () => {
 				<div className="about-content">
 					<div className="about-description container">
 						<div className="content-left-col">
-							<small> &lt;p&gt; Hi, There! &lt;/p&gt; </small>
-							<h3 className="text-right">
-								My name is <span>Luis Viegas</span>, Brazilian
-								<span> Web Developer </span>
-								devoted to the craft of <span>building websites</span> and
-								create enjoyable experiences.
-							</h3>
+							<div>
+								<small> &lt;p&gt; Hi, There! &lt;/p&gt; </small>
+								<h3 className="text-right">
+									My name is <span>Luis Viegas</span>, Brazilian
+									<span> Web Developer </span>
+									devoted to the craft of <span>building websites</span> and
+									create enjoyable experiences.
+								</h3>
+							</div>
+
+							<div>
+								<m.a
+									href="#about-section"
+									className="arrow-wrapper"
+									initial={{ opacity: 0, scale: 0.5 }}
+									animate={{ opacity: 1, scale: 1 }}
+								>
+									<IoMdArrowDown />
+								</m.a>
+							</div>
 						</div>
 
 						<div className="content-right-col">

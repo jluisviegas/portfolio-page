@@ -83,7 +83,7 @@ const Contact = () => {
 						<label htmlFor="">Message</label>
 
 						<div className="text-message">
-							<Button className="btn-form" name="Enviar" />
+							<Button className="btn-form" name="Send" />
 							<textarea
 								className="ff-headers"
 								name="message"
