@@ -69,21 +69,4 @@ const LogoSlider = () => {
 		</div>
 	);
 };
-
-export const HeroSlider = () => {
-	return (
-		<Slider
-			width="250px"
-			duration={40}
-			pauseOnHover={true}
-			blurBorders={true}
-			blurBoderColor={'#101019'}
-		>
-			<Slider.Slide>
-				<img src={framer} alt="any" className="logo-slider" />
-			</Slider.Slide>
-		</Slider>
-	);
-};
-
 export default LogoSlider;

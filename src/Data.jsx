@@ -5,6 +5,7 @@ import {
 	card3,
 	card4,
 	css,
+	gabi_logo,
 	graphql,
 	html,
 	javascript,
@@ -27,18 +28,18 @@ import {
 const projectsData = [
 	{
 		id: 1,
-		image: card1,
-		title: 'Personal Page',
+		image: card3,
+		title: 'Gabi Pães e Cia',
 		github: 'https://github.com',
-		description: 'Página para apresentação e exposição de projetos pessoais ',
+		description: "'Página para apresentação e exposição de projetos pessoais '",
 		stack: { lng1: 'React', lng2: 'SASS', lng3: 'Framer Motion' },
 		number: number1,
-		logo: maia_logo,
+		logo: gabi_logo,
 	},
 	{
 		id: 2,
 		image: card2,
-		title: 'HS Maia Distribuidora',
+		title: 'Renata Nery Psicoterapia Online',
 		github: 'https://github.com',
 		description:
 			'E-Commerce de distribuidora de Alimentos, Embalagens e Produtos de Limpeza',
@@ -48,19 +49,19 @@ const projectsData = [
 	},
 	{
 		id: 3,
-		image: card3,
-		title: 'Gabi Pães e Cia',
+		image: card1,
+		title: 'HS Maia Distrubuidora',
 		github: 'https://github.com',
 		description: 'https://dribble.com/shots',
 		stack: { lng1: 'React', lng2: 'TypeScript', lng3: 'Tailwind' },
 
 		number: number3,
-		logo: renata_logo,
+		logo: maia_logo,
 	},
 	{
 		id: 4,
 		image: card4,
-		title: 'Translator Google API',
+		title: 'Portfolio Page',
 		github: 'hhtps://github.com',
 		description: 'Simple Translator using Google Translate API',
 		stack: {

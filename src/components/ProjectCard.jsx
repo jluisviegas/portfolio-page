@@ -8,7 +8,7 @@ import { i18next as lng } from '../translate/i18n';
 
 const ProjectCard = () => {
 	return (
-		<div className="projects-container container">
+		<div className="projects-container container-small">
 			<ul className="projects-list">
 				{projectsData.map(
 					({ id, image, title, github, description, stack, number, logo }) => {
@@ -17,31 +17,28 @@ const ProjectCard = () => {
 								<div className="project-container">
 									<div className="project-header">
 										<img className="project-number" src={number}></img>
-										<a
+										<div className="project-logo">
+											<img src={logo} alt="" />
+										</div>
+										{/* <a
 											aria-label="instagram"
 											href="https://instagram.com/luis_viegas"
 											target="_blank"
 											className="icon-project"
 										>
 											<i class="fa-brands fa-github"></i>
-										</a>
+										</a> */}
 									</div>
 									<div className="project-image">
 										<img className="image" src={image} alt="" />
 										{/* logo */}
-										<div className="project-logo">
-											<img src={logo} alt="" />
-										</div>
+
 										<div className="project-content">
 											<h5>
 												<a href="">{title}</a>
 											</h5>
 											<p>{description}</p>
-											<div className="project-tech">
-												<small>{stack.lng1} ●</small>
-												<small>{stack.lng2} ●</small>
-												<small>{stack.lng3}</small>
-											</div>
+											<p>Tech</p>
 										</div>
 									</div>
 								</div>

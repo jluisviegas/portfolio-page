@@ -1,68 +1,79 @@
 .projects-list {
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	grid-template-rows: repeat(2, 1fr);
-	gap: 2rem;
+	display: flex;
+	flex-direction: column;
 	margin-bottom: 4rem;
 
 	.project-item {
-		// background-color: #16161e;
-		border-radius: 1rem;
-		// border: solid 1px var(--clr-primary-light);
 		width: 100%;
+		height: 22vh;
+		border-block: solid 1px var(--clr-primary-light);
+		transition: height 0.5s cubic-bezier(0.165, 0.04, 0.44, 1);
+
+		&:hover {
+			height: 500px;
+			.project-container {
+				.project-image {
+					img.image {
+						opacity: 0.3;
+						filter: grayscale(0.2);
+						transition: all 1.5s cubic-bezier(0.92, 0.18, 0.54, 0.85);
+					}
+				}
+				.project-header {
+					.project-logo {
+						display: block;
+					}
+				}
+			}
+		}
 
 		.project-container {
+			display: flex;
 			.project-header {
 				display: flex;
-				// justify-content: space-between;
-				background-color: #14131c;
-				border-radius: 1rem;
-				// border: solid 1px var(--clr-primary-light);
-				padding: 1rem;
-				margin: 0.5rem;
+				flex-direction: column;
+				align-items: center;
+				padding: 1.5rem;
+				margin-block: 1rem;
 
 				img {
 					width: 4rem;
+				}
+
+				.project-logo {
+					display: none;
+					margin-top: 1rem;
+					transition: all 0.3s cubic-bezier(0.165, 0.04, 0.44, 1);
+
+					img {
+						width: 3rem;
+						opacity: 0.5;
+					}
 				}
 			}
 
 			.project-image {
 				position: relative;
-				background-color: #14131c;
-				border-radius: 1rem;
-				// border: solid 1px var(--clr-primary-light);
-				// padding: 1rem;
-				margin: 0.5rem;
 				overflow: hidden;
 
 				img.image {
 					width: 100%;
-					height: 100%;
+					height: 500px;
+					object-fit: cover;
 					opacity: 0;
-					filter: grayscale(0.9);
-
-					&:hover {
-						opacity: 0.8;
-						filter: grayscale(0.2);
-					}
-				}
-
-				.project-logo {
-					position: absolute;
-					top: 0;
-					padding: 1rem;
-					img {
-						width: 4rem;
-					}
+					filter: grayscale(0.8);
+					transition: all 0.3s cubic-bezier(0.165, 0.04, 0.44, 1);
 				}
 
 				.project-content {
 					position: absolute;
-					bottom: 0;
-					padding: 1rem;
+					top: 0;
+					padding: 2rem;
 
 					h5 a {
 						color: var(--clr-neutral-base);
+						font-size: var(--fs-600);
+						text-transform: uppercase;
 					}
 				}
 			}

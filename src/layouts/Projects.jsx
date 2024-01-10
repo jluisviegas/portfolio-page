@@ -20,7 +20,7 @@ const Projects = () => {
 	return (
 		<m.section
 			className=""
-			id="portfolio-section"
+			id="portfolio-section container-small"
 			ref={sectionRef}
 			style={{
 				opacity: opacitySection,
@@ -32,7 +32,6 @@ const Projects = () => {
 				<div className="big-header right">Projects</div>
 			</m.div>
 			<ProjectCard />
-			<h5>Other Projects</h5>
 		</m.section>
 	);
 };
