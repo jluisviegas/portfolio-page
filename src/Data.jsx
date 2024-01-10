@@ -8,6 +8,7 @@ import {
 	graphql,
 	html,
 	javascript,
+	maia_logo,
 	mysql,
 	next,
 	node,
@@ -16,6 +17,7 @@ import {
 	number3,
 	number4,
 	react,
+	renata_logo,
 	sass,
 	tailwind,
 	typescript,
@@ -31,6 +33,7 @@ const projectsData = [
 		description: 'Página para apresentação e exposição de projetos pessoais ',
 		stack: { lng1: 'React', lng2: 'SASS', lng3: 'Framer Motion' },
 		number: number1,
+		logo: maia_logo,
 	},
 	{
 		id: 2,
@@ -41,6 +44,7 @@ const projectsData = [
 			'E-Commerce de distribuidora de Alimentos, Embalagens e Produtos de Limpeza',
 		stack: { lng1: 'Wordpress', lng2: 'Elementor', lng3: 'WooCommerce' },
 		number: number2,
+		logo: renata_logo,
 	},
 	{
 		id: 3,
@@ -51,6 +55,7 @@ const projectsData = [
 		stack: { lng1: 'React', lng2: 'TypeScript', lng3: 'Tailwind' },
 
 		number: number3,
+		logo: renata_logo,
 	},
 	{
 		id: 4,
@@ -64,6 +69,7 @@ const projectsData = [
 			img3: 'src/assets/images/api.png',
 		},
 		number: number4,
+		logo: renata_logo,
 	},
 ];
 

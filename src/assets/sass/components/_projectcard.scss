@@ -6,18 +6,18 @@
 	margin-bottom: 4rem;
 
 	.project-item {
-		background-color: #16161e;
+		// background-color: #16161e;
 		border-radius: 1rem;
-		border: solid 1px var(--clr-primary-light);
-		width: 600px;
+		// border: solid 1px var(--clr-primary-light);
+		width: 100%;
 
 		.project-container {
 			.project-header {
 				display: flex;
-				justify-content: space-between;
+				// justify-content: space-between;
 				background-color: #14131c;
 				border-radius: 1rem;
-				border: solid 1px var(--clr-primary-light);
+				// border: solid 1px var(--clr-primary-light);
 				padding: 1rem;
 				margin: 0.5rem;
 
@@ -30,7 +30,7 @@
 				position: relative;
 				background-color: #14131c;
 				border-radius: 1rem;
-				border: solid 1px var(--clr-primary-light);
+				// border: solid 1px var(--clr-primary-light);
 				// padding: 1rem;
 				margin: 0.5rem;
 				overflow: hidden;
@@ -38,12 +38,21 @@
 				img.image {
 					width: 100%;
 					height: 100%;
-					opacity: 0.2;
+					opacity: 0;
 					filter: grayscale(0.9);
 
 					&:hover {
 						opacity: 0.8;
 						filter: grayscale(0.2);
+					}
+				}
+
+				.project-logo {
+					position: absolute;
+					top: 0;
+					padding: 1rem;
+					img {
+						width: 4rem;
 					}
 				}
 

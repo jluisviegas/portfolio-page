@@ -67,3 +67,18 @@
 .icon-item:nth-child(4) a:hover:before {
 	background: #0077b5;
 }
+
+.icon-project {
+	a {
+		display: inline-flex;
+		font-size: 2rem;
+		text-decoration: none;
+		color: var(--clr-primary-light);
+		width: 3rem;
+		height: 3rem;
+		transition: 0.5s linear;
+		position: relative;
+		z-index: 1;
+		margin: auto;
+	}
+}

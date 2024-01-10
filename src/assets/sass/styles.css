@@ -196,7 +196,7 @@ ul {
   --fs-500: 1.4rem;
   --fs-600: 1.9rem;
   --fs-700: 2.441rem;
-  --fs-800: 4.152rem;
+  --fs-800: 7rem;
   --ff-apercu: "Apercu Mono", sans-serif;
   --ff-antique: "Antique Olive", sans-serif;
   --ff-matter: "Matter", sans-serif;
@@ -209,7 +209,7 @@ ul {
     --fs-500: 1.7rem;
     --fs-600: 2.4rem;
     --fs-700: 4.5rem;
-    --fs-800: 7.653rem;
+    --fs-800: 12rem;
   }
 }
 
@@ -237,26 +237,16 @@ ul {
 
 .section-header {
   font-family: var(--ff-fig);
-  font-size: calc(var(--fs-800) * 2.5);
+  font-size: calc(var(--fs-700) * 2.5);
   padding: 8rem 0 4rem 0;
   font-weight: 700;
   text-transform: uppercase;
 }
 
 .big-header {
-  opacity: 0.03;
+  opacity: 0.05;
   color: var(--clr-neutral-base);
   letter-spacing: -8px;
-}
-
-.blob {
-  background-color: white;
-  height: 30rem;
-  aspect-ratio: 1;
-  position: absolute;
-  border-radius: 50%;
-  background: linear-gradient(to right, aquamarine, var(--clr-accent-base));
-  opacity: 0.8;
 }
 
 .blur {
@@ -567,6 +557,19 @@ nav li {
   background: #0077b5;
 }
 
+.icon-project a {
+  display: inline-flex;
+  font-size: 2rem;
+  text-decoration: none;
+  color: var(--clr-primary-light);
+  width: 3rem;
+  height: 3rem;
+  transition: 0.5s linear;
+  position: relative;
+  z-index: 1;
+  margin: auto;
+}
+
 .projects-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -575,17 +578,13 @@ nav li {
   margin-bottom: 4rem;
 }
 .projects-list .project-item {
-  background-color: #16161e;
   border-radius: 1rem;
-  border: solid 1px var(--clr-primary-light);
-  width: 600px;
+  width: 100%;
 }
 .projects-list .project-item .project-container .project-header {
   display: flex;
-  justify-content: space-between;
   background-color: #14131c;
   border-radius: 1rem;
-  border: solid 1px var(--clr-primary-light);
   padding: 1rem;
   margin: 0.5rem;
 }
@@ -596,19 +595,26 @@ nav li {
   position: relative;
   background-color: #14131c;
   border-radius: 1rem;
-  border: solid 1px var(--clr-primary-light);
   margin: 0.5rem;
   overflow: hidden;
 }
 .projects-list .project-item .project-container .project-image img.image {
   width: 100%;
   height: 100%;
-  opacity: 0.2;
+  opacity: 0;
   filter: grayscale(0.9);
 }
 .projects-list .project-item .project-container .project-image img.image:hover {
   opacity: 0.8;
   filter: grayscale(0.2);
+}
+.projects-list .project-item .project-container .project-image .project-logo {
+  position: absolute;
+  top: 0;
+  padding: 1rem;
+}
+.projects-list .project-item .project-container .project-image .project-logo img {
+  width: 4rem;
 }
 .projects-list .project-item .project-container .project-image .project-content {
   position: absolute;
@@ -674,15 +680,8 @@ nav li {
   height: 100vh;
 }
 .hero-main-container .hero-image-wrap {
-  position: absolute;
-  top: 10vh;
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
-  width: 38vw;
-  height: 65vh;
-  z-index: -1;
+  width: 18vw;
+  height: 40vh;
 }
 .hero-main-container .hero-image-wrap img {
   width: 100%;
@@ -693,25 +692,21 @@ nav li {
   border-radius: 2rem;
   opacity: 0.7;
 }
-.hero-main-container .hero-text-wrap {
-  position: relative;
-  text-align: center;
-  top: 14vh;
-  left: 0;
-  letter-spacing: -5px;
-  font-size: clamp(1.8rem, 3.5vw, 6rem);
-}
 @media only screen and (min-width: 768px) {
-  .hero-main-container .hero-text-wrap {
-    position: absolute;
-    left: 20%;
-    letter-spacing: -8px;
-  }
   .hero-main-container .hero-text-wrap .hero-name {
-    font-weight: 500;
+    font-size: var(--fs-700);
+    transition: all 2s cubic-bezier(0.165, 0.04, 0.44, 1);
   }
   .hero-main-container .hero-text-wrap .hero-title-top {
-    left: 10vw;
+    font-size: var(--fs-800);
+    font-weight: 700;
+    color: var(--clr-primary-light);
+    transition: all 2s cubic-bezier(0.165, 0.04, 0.44, 1);
+    margin-left: -30px;
+  }
+  .hero-main-container .hero-text-wrap .hero-title-top span {
+    color: var(--clr-accent-base);
+    font-size: var(--fs-700);
   }
   .hero-main-container .hero-text-wrap .hero-title-bottom {
     left: 10vw;

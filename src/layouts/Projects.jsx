@@ -32,6 +32,7 @@ const Projects = () => {
 				<div className="big-header right">Projects</div>
 			</m.div>
 			<ProjectCard />
+			<h5>Other Projects</h5>
 		</m.section>
 	);
 };

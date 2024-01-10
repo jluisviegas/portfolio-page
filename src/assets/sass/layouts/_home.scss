@@ -23,15 +23,8 @@
 	height: 100vh;
 
 	.hero-image-wrap {
-		position: absolute;
-		top: 10vh;
-		left: 0;
-		right: 0;
-		margin-left: auto;
-		margin-right: auto;
-		width: 38vw;
-		height: 65vh;
-		z-index: -1;
+		width: 18vw;
+		height: 40vh;
 
 		img {
 			width: 100%;
@@ -44,23 +37,24 @@
 	}
 
 	.hero-text-wrap {
-		position: relative;
-		text-align: center;
-		top: 14vh;
-		left: 0;
-		letter-spacing: -5px;
-		font-size: clamp(1.8rem, 3.5vw, 6rem);
 		@include mq(md) {
-			position: absolute;
-			left: 20%;
-			letter-spacing: -8px;
-
 			.hero-name {
-				font-weight: 500;
+				font-size: var(--fs-700);
+				// font-weight: 600;
+				transition: all 2s cubic-bezier(0.165, 0.04, 0.44, 1);
 			}
 
 			.hero-title-top {
-				left: 10vw;
+				font-size: var(--fs-800);
+				font-weight: 700;
+				color: var(--clr-primary-light);
+				transition: all 2s cubic-bezier(0.165, 0.04, 0.44, 1);
+				margin-left: -30px;
+
+				span {
+					color: var(--clr-accent-base);
+					font-size: var(--fs-700);
+				}
 			}
 			.hero-title-bottom {
 				left: 10vw;

@@ -10,6 +10,7 @@ import graphql from './graphql.png';
 import html from './html.png';
 import javascript from './javascript.png';
 import card4 from './luis-page.png';
+import maia_logo from './maia-logo.png';
 import card1 from './maia-page.png';
 import menu from './menu.svg';
 import mysql from './mysql.png';
@@ -21,6 +22,7 @@ import next from './next.png';
 import node from './node.png';
 import prisma from './prisma.png';
 import react from './react.png';
+import renata_logo from './renata-logo.png';
 import card2 from './renata-page.png';
 import sass from './sass.png';
 import skills from './skills.png';
@@ -43,6 +45,7 @@ export {
 	graphql,
 	html,
 	javascript,
+	maia_logo,
 	menu,
 	mysql,
 	next,
@@ -53,6 +56,7 @@ export {
 	number4,
 	prisma,
 	react,
+	renata_logo,
 	sass,
 	skills,
 	tailwind,

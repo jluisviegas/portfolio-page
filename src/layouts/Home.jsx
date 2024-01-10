@@ -6,13 +6,14 @@ import { defaultOptions } from '../animation';
 import CV from '../assets/images/cv.pdf';
 import ME from '../assets/images/me-about.jpg';
 import Button from '../components/Button';
-import LanguageSelector from '../components/LanguageSelector';
 import Logo from '../components/Logo';
 import Nav from '../components/Navbar/Navbar';
+import { HeroSlider } from '../components/Slider';
 import { i18next as lng } from '../translate/i18n';
+
 const Home = () => {
 	const { scrollYProgress } = useScroll();
-	const x = useTransform(scrollYProgress, [0, 0.9], [0, -900]);
+	const x = useTransform(scrollYProgress, [0, 1], [0, -600]);
 	const xr = useTransform(scrollYProgress, [0, 0.9], [0, 900]);
 
 	return (
@@ -35,28 +36,19 @@ const Home = () => {
 
 				{/* Main */}
 				<div className="hero-main-container relative container">
+					<div className="hero-text-wrap">
+						<m.h1 className="hero-title-top relative" style={{ x: x }}>
+							<i>WEB</i> <span>•</span> DEVELOPER
+						</m.h1>
+						<m.h2 className="hero-name relative" style={{ x: xr }}>
+							LUIS VIEGAS
+						</m.h2>
+
+						{/* <HeroSlider />	 */}
+					</div>
 					<Tilt className="hero-image-wrap" options={defaultOptions}>
 						<img src={ME} alt="Luis Viegas" />
 					</Tilt>
-					<div className="hero-text-wrap">
-						<m.h1 className="hero-name relative" style={{ x: x }}>
-							LUIS VIEGAS
-						</m.h1>
-						<m.h1 className="hero-title-top relative" style={{ x: xr }}>
-							web
-						</m.h1>
-						<m.h1 className="hero-title-bottom relative" style={{ x: x }}>
-							developer
-						</m.h1>
-					</div>
-					<m.a
-						href="#about-section"
-						className="arrow-wrapper"
-						initial={{ opacity: 0, scale: 0.5 }}
-						animate={{ opacity: 1, scale: 1 }}
-					>
-						<IoMdArrowDown />
-					</m.a>
 				</div>
 
 				{/* Scroll Arrow */}
