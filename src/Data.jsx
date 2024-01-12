@@ -31,19 +31,20 @@ const projectsData = [
 		image: card3,
 		title: 'Gabi Pães e Cia',
 		github: 'https://github.com',
-		description: "'Página para apresentação e exposição de projetos pessoais '",
-		stack: { lng1: 'React', lng2: 'SASS', lng3: 'Framer Motion' },
+		description:
+			'A e-commerce platform, specialized in providing a diverse range of high-quality breads, buns, cakes, and more to elevate the culinary offerings of restaurants, cafes, and various other establishments in the town. ',
+		stack: '#Next • #Tailwind',
 		number: number1,
 		logo: gabi_logo,
 	},
 	{
 		id: 2,
 		image: card2,
-		title: 'Renata Nery Psicoterapia Online',
+		title: 'Renata Nery Page',
 		github: 'https://github.com',
 		description:
-			'E-Commerce de distribuidora de Alimentos, Embalagens e Produtos de Limpeza',
-		stack: { lng1: 'Wordpress', lng2: 'Elementor', lng3: 'WooCommerce' },
+			'Professional webpage for self-presentation with the primary goal of  showcasing my expertise and also to facilitate seamless communication and engagement with prospective clients.',
+		stack: '#Astro • #Tailwind • #Framer Motion • #Typescript',
 		number: number2,
 		logo: renata_logo,
 	},
@@ -53,7 +54,7 @@ const projectsData = [
 		title: 'HS Maia Distrubuidora',
 		github: 'https://github.com',
 		description: 'https://dribble.com/shots',
-		stack: { lng1: 'React', lng2: 'TypeScript', lng3: 'Tailwind' },
+		stack: '#Next | #Tailwind',
 
 		number: number3,
 		logo: maia_logo,
@@ -64,11 +65,8 @@ const projectsData = [
 		title: 'Portfolio Page',
 		github: 'hhtps://github.com',
 		description: 'Simple Translator using Google Translate API',
-		stack: {
-			img1: 'src/assets/images/javascript.png',
-			img2: 'src/assets/images/css.png',
-			img3: 'src/assets/images/api.png',
-		},
+		stack: '#Next | #Tailwind',
+
 		number: number4,
 		logo: renata_logo,
 	},

@@ -5,14 +5,14 @@ import { IoMdArrowUp } from 'react-icons/io';
 import { cardAnimated, itemAnimated } from '../animation';
 import Button from '../components/Button';
 import Socials from '../components/Socials';
+import useInViewAnimation from '../hooks/useInViewAnimation';
 import { useParallax } from './Projects';
 
 const Contact = () => {
 	const form = useRef(null);
-	const hRef = useRef(null);
 	const cRef = useRef(null);
-	const isInView = useInView(hRef, { once: false });
 	const sectionRef = useRef(null);
+	const { ref, control } = useInViewAnimation();
 
 	const { scrollYProgress } = useScroll({
 		target: sectionRef,
@@ -36,7 +36,7 @@ const Contact = () => {
 
 	return (
 		<m.section
-			className=" container relative"
+			className="container relative"
 			id="contact-section"
 			ref={sectionRef}
 			style={{ opacity: opacitySection }}
@@ -44,8 +44,8 @@ const Contact = () => {
 			<m.div
 				ref={cRef}
 				className="contact"
-				initial="offscreen"
-				whileInView="onscreen"
+				initial="closed"
+				whileInView="open"
 				viewport={{ once: true, amount: 0 }}
 				variants={cardAnimated}
 			>
@@ -54,8 +54,8 @@ const Contact = () => {
 					<m.div
 						className="header-wrapper"
 						ref={cRef}
-						initial="offscreen"
-						whileInView="onscreen"
+						initial="closed"
+						whileInView="open"
 						viewport={{ once: false, amount: 0 }}
 						variants={cardAnimated}
 					>
@@ -66,30 +66,42 @@ const Contact = () => {
 					</m.div>
 					<form ref={form} onSubmit={sendEmail}>
 						<label htmlFor="">Your name</label>
-						<input
+						<m.input
 							type="text"
 							name="name"
 							placeholder="E.g. John Doe"
 							required
+							variants={itemAnimated}
+							ref={ref}
+							animate={control}
+							initial="closed"
 						/>
 						<label htmlFor="">Your email</label>
 
-						<input
+						<m.input
 							type="email"
 							name="email"
 							placeholder="E.g. johndoe@gmail.com"
 							required
+							variants={itemAnimated}
+							ref={ref}
+							animate={control}
+							initial="closed"
 						/>
 						<label htmlFor="">Message</label>
 
 						<div className="text-message">
 							<Button className="btn-form" name="Send" />
-							<textarea
+							<m.textarea
 								className="ff-headers"
 								name="message"
 								rows="6"
 								placeholder="Enter your message"
-							></textarea>
+								variants={itemAnimated}
+								ref={ref}
+								animate={control}
+								initial="closed"
+							></m.textarea>
 						</div>
 					</form>
 				</div>
@@ -105,13 +117,14 @@ const Contact = () => {
 						<Socials className="icon-list-contact" />
 					</div>
 					<div className="info-wrapper">
-						<m.div
+						<m.a
+							href="#"
 							className="contact-arrow"
 							whileHover={{ scale: 0.85 }}
 							transition={{ type: 'spring', stiffness: 200, bounce: 0.25 }}
 						>
 							<IoMdArrowUp />
-						</m.div>
+						</m.a>
 					</div>
 				</div>
 			</m.div>

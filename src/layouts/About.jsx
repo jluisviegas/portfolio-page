@@ -2,19 +2,22 @@ import { motion as m, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import { IoMdArrowDown } from 'react-icons/io';
 import { skillsData } from '../Data';
-import { skills } from '../assets/images';
+import { cardAnimated, itemAnimated } from '../animation';
 import LogoSlider from '../components/Slider';
+import useInViewAnimation from '../hooks/useInViewAnimation';
 import { useParallax } from './Projects';
 
 const About = () => {
-	const sectionRef = useRef(null);
+	const { ref, control } = useInViewAnimation();
 
+	const sectionRef = useRef(null);
 	const { scrollYProgress } = useScroll({
 		target: sectionRef,
 		offset: ['start end', 'end end'],
 	});
 	const opacitySection = useTransform(scrollYProgress, [0.1, 0.5], [0.2, 1]);
 	const y = useParallax(scrollYProgress, -60);
+	const x = useParallax(scrollYProgress, 60);
 
 	return (
 		<m.section
@@ -38,7 +41,13 @@ const About = () => {
 				<div className="about-content">
 					<div className="about-description container">
 						<div className="content-left-col">
-							<div>
+							<m.div
+								className="content-left"
+								ref={ref}
+								variants={cardAnimated}
+								initial="closed"
+								animate={control}
+							>
 								<small> &lt;p&gt; Hi, There! &lt;/p&gt; </small>
 								<h3 className="text-right">
 									My name is <span>Luis Viegas</span>, Brazilian
@@ -46,11 +55,11 @@ const About = () => {
 									devoted to the craft of <span>building websites</span> and
 									create enjoyable experiences.
 								</h3>
-							</div>
+							</m.div>
 
 							<div>
 								<m.a
-									href="#about-section"
+									href="#project-section"
 									className="arrow-wrapper"
 									initial={{ opacity: 0, scale: 0.5 }}
 									animate={{ opacity: 1, scale: 1 }}
@@ -60,7 +69,13 @@ const About = () => {
 							</div>
 						</div>
 
-						<div className="content-right-col">
+						<m.div
+							className="content-right-col"
+							ref={ref}
+							variants={cardAnimated}
+							initial="closed"
+							animate={control}
+						>
 							<p>
 								Welcome to my professional journey! I hold an MBA with a
 								specialization in Business and Marketing, and my career has been
@@ -92,7 +107,7 @@ const About = () => {
 								my approach to development but also underscores my commitment to
 								fostering positive, user-centric solutions.
 							</p>
-						</div>
+						</m.div>
 					</div>
 				</div>
 

@@ -20,7 +20,7 @@ const Projects = () => {
 	return (
 		<m.section
 			className=""
-			id="portfolio-section container-small"
+			id="project-section"
 			ref={sectionRef}
 			style={{
 				opacity: opacitySection,
