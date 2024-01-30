@@ -1,7 +1,33 @@
 import { motion as m, useInView, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
+import { card1, card2, card3, card4 } from '../assets/images';
 import ProjectCard from '../components/ProjectCard';
-import { i18next as lng } from '../translate/i18n';
+
+const projects = [
+	{
+		title1: 'Gabi',
+		title2: 'Pães',
+		src: card3,
+	},
+
+	{
+		title1: 'Renata',
+		title2: 'Nery',
+		src: card2,
+	},
+
+	{
+		title1: 'HS',
+		title2: 'Maia',
+		src: card1,
+	},
+
+	{
+		title1: 'Portfolio',
+		title2: 'Page',
+		src: card4,
+	},
+];
 
 export const useParallax = (value, distance) => {
 	return useTransform(value, [0, 1], [-distance, distance]);
@@ -15,7 +41,7 @@ const Projects = () => {
 		offset: ['start end', 'end end'],
 	});
 	const opacitySection = useTransform(scrollYProgress, [0.1, 0.5], [0.2, 1]);
-	const y = useParallax(scrollYProgress, 80);
+	const y = useParallax(scrollYProgress, 100);
 
 	return (
 		<m.section
@@ -31,7 +57,13 @@ const Projects = () => {
 			<m.div className="section-header" style={{ y }}>
 				<div className="big-header right">Projects</div>
 			</m.div>
-			<ProjectCard />
+			<div className="projects-page">
+				<div className="projects-container">
+					{projects.map((project) => {
+						return <ProjectCard project={project} />;
+					})}
+				</div>
+			</div>
 		</m.section>
 	);
 };

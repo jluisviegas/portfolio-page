@@ -2,7 +2,7 @@ import emailjs from '@emailjs/browser';
 import { motion as m, useInView, useScroll, useTransform } from 'framer-motion';
 import React, { useRef } from 'react';
 import { IoMdArrowUp } from 'react-icons/io';
-import { cardAnimated, itemAnimated } from '../animation';
+import { itemAnimated, slideY } from '../animation';
 import Button from '../components/Button';
 import Socials from '../components/Socials';
 import useInViewAnimation from '../hooks/useInViewAnimation';
@@ -19,7 +19,7 @@ const Contact = () => {
 		offset: ['start end', 'end end'],
 	});
 	const opacitySection = useTransform(scrollYProgress, [0.1, 0.5], [0.2, 1]);
-	const y = useParallax(scrollYProgress, 120);
+	const y = useParallax(scrollYProgress, 90);
 
 	const sendEmail = (e) => {
 		e.preventDefault();
@@ -39,7 +39,9 @@ const Contact = () => {
 			className="container relative"
 			id="contact-section"
 			ref={sectionRef}
-			style={{ opacity: opacitySection }}
+			variants={slideY}
+			initial="closed"
+			animate={control}
 		>
 			<m.div
 				ref={cRef}
@@ -47,7 +49,7 @@ const Contact = () => {
 				initial="closed"
 				whileInView="open"
 				viewport={{ once: true, amount: 0 }}
-				variants={cardAnimated}
+				variants={itemAnimated}
 			>
 				{/* Contact Form */}
 				<div className="form-col">
@@ -57,7 +59,7 @@ const Contact = () => {
 						initial="closed"
 						whileInView="open"
 						viewport={{ once: false, amount: 0 }}
-						variants={cardAnimated}
+						variants={itemAnimated}
 					>
 						<h2>
 							Get in
@@ -114,7 +116,7 @@ const Contact = () => {
 							Feel free to send a message for collaborations, advice, or just to
 							say hi!
 						</p>
-						<Socials className="icon-list-contact" />
+						<Socials className="icon-list-contact icon-link" />
 					</div>
 					<div className="info-wrapper">
 						<m.a

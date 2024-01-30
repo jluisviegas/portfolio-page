@@ -2,7 +2,7 @@ import { motion as m, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import { IoMdArrowDown } from 'react-icons/io';
 import { skillsData } from '../Data';
-import { cardAnimated, itemAnimated } from '../animation';
+import { itemAnimated, slideLeftY, slideRightY } from '../animation';
 import LogoSlider from '../components/Slider';
 import useInViewAnimation from '../hooks/useInViewAnimation';
 import { useParallax } from './Projects';
@@ -16,7 +16,7 @@ const About = () => {
 		offset: ['start end', 'end end'],
 	});
 	const opacitySection = useTransform(scrollYProgress, [0.1, 0.5], [0.2, 1]);
-	const y = useParallax(scrollYProgress, -60);
+	const y = useParallax(scrollYProgress, -200);
 	const x = useParallax(scrollYProgress, 60);
 
 	return (
@@ -44,7 +44,7 @@ const About = () => {
 							<m.div
 								className="content-left"
 								ref={ref}
-								variants={cardAnimated}
+								variants={slideLeftY}
 								initial="closed"
 								animate={control}
 							>
@@ -72,7 +72,7 @@ const About = () => {
 						<m.div
 							className="content-right-col"
 							ref={ref}
-							variants={cardAnimated}
+							variants={slideRightY}
 							initial="closed"
 							animate={control}
 						>
@@ -110,8 +110,6 @@ const About = () => {
 						</m.div>
 					</div>
 				</div>
-
-				{/* Skill Icons */}
 			</div>
 			<LogoSlider />
 		</m.section>

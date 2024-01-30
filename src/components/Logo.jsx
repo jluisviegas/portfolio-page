@@ -16,7 +16,15 @@ const Logo = ({ size }) => {
 					fill="none"
 					xmlns="http://www.w3.org/2000/svg"
 					initial={{ opacity: 0, scale: 0.5, y: -50 }}
-					animate={{ opacity: 1, scale: 1, y: 0 }}
+					animate={{
+						opacity: 1,
+						scale: 1,
+						y: 0,
+						transition: {
+							duration: 0.5,
+							delay: 0.5,
+						},
+					}}
 					transition={{
 						type: 'spring',
 						// duration: 0.8,

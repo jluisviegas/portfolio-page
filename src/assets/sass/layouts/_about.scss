@@ -32,7 +32,7 @@
 		padding: 0.5rem;
 		flex-basis: 1;
 		p {
-			font-size: var(--fs-500);
+			font-size: var(--fs-400);
 		}
 	}
 	.content-left-col {
@@ -66,12 +66,12 @@
 
 	@include mq(lg) {
 		.arrow-wrapper {
-			color: var(--clr-neutral-base);
-			background: #16161e;
+			color: var(--clr-accent-base);
+			background: var(--clr-neutral-base);
 			border-radius: 50%;
-			width: 8rem;
-			height: 8rem;
-			font-size: 5rem;
+			width: 7rem;
+			height: 7rem;
+			font-size: 4.5rem;
 			display: flex;
 			justify-content: center;
 			align-items: center;

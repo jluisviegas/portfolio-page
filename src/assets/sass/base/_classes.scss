@@ -22,8 +22,8 @@
 
 .section-header {
 	font-family: var(--ff-fig);
-	font-size: calc(var(--fs-700) * 4);
-	padding: 6rem 0 4rem 0;
+	font-size: clamp(5.5rem, 16vw, 16rem);
+	padding: 6rem 0 5rem 0;
 	font-weight: 700;
 	text-transform: uppercase;
 }

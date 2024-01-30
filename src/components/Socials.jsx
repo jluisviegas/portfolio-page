@@ -9,7 +9,7 @@ const Socials = ({ className }) => {
 						aria-label="email"
 						href="mailto: jlviegass@hotmail.com"
 						target="_blank"
-						className="icon-link"
+						className="icon-link black"
 					>
 						<i class="fa-solid fa-envelope"></i>
 					</a>
