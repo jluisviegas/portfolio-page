@@ -1,18 +1,13 @@
 @font-face {
 	font-family: 'Antique Olive';
-	font-style: normal; // or italic if needed
-	font-weight: 700; // instead of 'bold'
+	font-style: normal;
+	font-weight: 700;
 	src: url(/src/assets/fonts/Antique-Olive-Bold.ttf) format('truetype');
 }
 
 @font-face {
 	font-family: 'Apercu Mono';
 	src: url(/src/assets/fonts/ApercuMonoProRegular.ttf) format('truetype');
-}
-
-@font-face {
-	font-family: 'Matter';
-	src: url(/src/assets/fonts/Matter-Regular.otf) format('opentype');
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;700&display=swap');

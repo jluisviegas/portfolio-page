@@ -2,7 +2,7 @@
 
 body {
 	font-size: var(--fs-400);
-	font-family: var(--ff-matter);
+	font-family: var(--ff-fig);
 	background-color: var(--clr-primary-base);
 	letter-spacing: -0.5px;
 }
@@ -12,12 +12,11 @@ h2,
 h3 {
 	font-weight: normal;
 	line-height: 1;
-	font-family: var(--ff-fig);
+	font-family: var(--ff-antique);
 	color: var(--clr-neutral-base);
 	transition: font-size 0.25s linear;
 }
 h1 {
-	font-size: clamp(3.5rem, 8vw, 10rem);
 	letter-spacing: -4.2px;
 }
 
@@ -48,30 +47,15 @@ h5 {
 
 p {
 	font-size: var(--fs-400);
-	font-family: var(--ff-matter);
 	transition: font-size 0.25s linear;
 }
 
 small {
-	// font-size: var(--fs-400);
-	font-family: var(--ff-apercu);
 	color: var(--clr-neutral-base);
 }
 span {
-	font-family: var(--ff-matter);
 	font-size: var(--fs-300);
 }
-
-// a {
-// 	color: var(--clr-neutral-base);
-// 	@include transition(ease-in-out 0.3s all);
-
-// 	&:hover,
-// 	&:focus {
-// 		color: var(--clr-neutral-base);
-// 		text-decoration: none;
-// 	}
-// }
 
 ::placeholder {
 	color: var(--clr-primary-light);
@@ -91,8 +75,4 @@ span {
 
 .uppercase {
 	text-transform: uppercase;
-}
-
-ul {
-	padding: 0;
 }

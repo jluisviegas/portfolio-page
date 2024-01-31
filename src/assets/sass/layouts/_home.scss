@@ -51,30 +51,21 @@
 	.hero-text-wrap {
 		margin-top: 10vh;
 
-		.hero-name {
-			font-size: clamp(1.5rem, 2.5vw, 6rem);
+		.hero-luis {
+			font-size: clamp(1.3rem, 2.2vw, 5.5rem);
+			color: var(--clr-neutral-light);
+			margin-right: 0.5rem;
+		}
+		.hero-viegas {
+			font-size: clamp(1.3rem, 2.2vw, 5.5rem);
 			color: var(--clr-primary-light);
-			font-weight: 700;
-			transition: all 2s cubic-bezier(0.165, 0.04, 0.44, 1);
-			@include mq(md) {
-				left: 2.9rem;
-			}
-
-			span {
-				font-size: clamp(1.5rem, 2.5vw, 6rem);
-				color: var(--clr-neutral-base);
-			}
 		}
 
 		.hero-title-top {
-			font-size: clamp(4.3rem, 15vw, 9rem);
-			font-weight: 700;
-			transition: all 2s cubic-bezier(0.165, 0.04, 0.44, 1);
+			font-size: clamp(4rem, 15vw, 9rem);
 		}
 		.hero-title-middle {
-			font-weight: 700;
-			font-size: clamp(4.3rem, 15vw, 9rem);
-			transition: all 2s cubic-bezier(0.165, 0.04, 0.44, 1);
+			font-size: clamp(4rem, 15vw, 9rem);
 			@include mq(md) {
 				left: 2.9rem;
 			}

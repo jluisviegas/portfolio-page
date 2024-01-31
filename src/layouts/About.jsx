@@ -49,12 +49,12 @@ const About = () => {
 								animate={control}
 							>
 								<small> &lt;p&gt; Hi, There! &lt;/p&gt; </small>
-								<h3 className="text-right">
+								<h4 className="text-right">
 									My name is <span>Luis Viegas</span>, Brazilian
 									<span> Web Developer </span>
 									devoted to the craft of <span>building websites</span> and
 									create enjoyable experiences.
-								</h3>
+								</h4>
 							</m.div>
 
 							<div>

@@ -83,9 +83,10 @@ const Home = () => {
 							WEB
 						</m.h1>
 						<m.h1 className="hero-title-middle relative">DEVELOPER</m.h1>
-						<m.h2 className="hero-name relative">
-							<span>LUIS</span> VIEGAS
-						</m.h2>
+						<div className="flex">
+							<m.h2 className="hero-luis">LUIS</m.h2>
+							<m.h2 className="hero-viegas">VIEGAS</m.h2>
+						</div>
 					</m.div>
 					<m.div
 						className="location-text"

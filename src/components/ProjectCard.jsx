@@ -38,7 +38,7 @@ const ProjectCard = ({ project }) => {
 				}}
 				className="project"
 			>
-				<p>{title1}</p>
+				<h4>{title1}</h4>
 
 				<m.div
 					variants={imgAnimation}
@@ -48,7 +48,7 @@ const ProjectCard = ({ project }) => {
 					<img src={src}></img>
 				</m.div>
 
-				<p>{title2}</p>
+				<h4>{title2}</h4>
 			</div>
 			<m.div
 				className="project-text-view"
