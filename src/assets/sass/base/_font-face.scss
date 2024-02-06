@@ -6,6 +6,20 @@
 }
 
 @font-face {
+	font-family: 'General Sans';
+	font-style: normal;
+	font-weight: 400;
+	src: url(/src/assets/fonts/GeneralSans-Regular.otf) format('truetype');
+}
+
+@font-face {
+	font-family: 'General Sans';
+	font-style: normal;
+	font-weight: 600;
+	src: url(/src/assets/fonts/GeneralSans-Semibold.otf) format('truetype');
+}
+
+@font-face {
 	font-family: 'Apercu Mono';
 	src: url(/src/assets/fonts/ApercuMonoProRegular.ttf) format('truetype');
 }

@@ -8,8 +8,8 @@ const Footer = () => {
 		<footer className="footer relative">
 			<div className="footer-main container">
 				<div className="footer-logo mobile-display">
-					<Logo size="30" />
-					<p>© 2024 | Designed & Developed by Luis Viegas</p>
+					<p>© 2024</p>
+					<p>Designed & Developed by Luis Viegas.</p>
 				</div>
 			</div>
 		</footer>

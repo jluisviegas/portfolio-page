@@ -1,8 +1,8 @@
 import { motion as m, useScroll, useTransform } from 'framer-motion';
 import React, { useEffect, useRef, useState } from 'react';
 import { IoMdArrowDown } from 'react-icons/io';
-import { slideRightY, spring } from '../animation';
-import CV from '../assets/images/cv.pdf';
+import { itemAnimated, slideRightY } from '../animation';
+import resume from '../assets/resume.pdf';
 import Button from '../components/Button';
 import Logo from '../components/Logo';
 import ScrollDown from '../components/ScrollDown';
@@ -30,15 +30,39 @@ export function CurrentDate() {
 }
 
 const Home = () => {
-	const { scrollYProgress } = useScroll();
+	const main = useRef(null);
+
+	const { scrollYProgress } = useScroll({
+		target: main,
+		offset: ['start 0.9', 'start start'],
+	});
 	const { ref, control } = useInViewAnimation();
 
 	return (
 		<>
-			<main className="hero-section" id="#">
+			<m.main
+				className="hero-section"
+				id="#"
+				initial={{
+					background: 'hsl(224, 52%, 4%)',
+				}}
+				animate={{
+					background: 'hsl(240, 24%, 8%)',
+					transition: {
+						duration: 1,
+					},
+				}}
+				style={{ opacity: scrollYProgress }}
+				ref={main}
+			>
 				{/* Header */}
 				<header className="header container">
-					<Logo size="50" />
+					{/* <Logo size="50" /> */}
+					<div className="nav-content">
+						<i class="fa-solid fa-star-of-life"></i> <p>WEB DEVELOPER</p>
+						<p>PORTFOLIO 2024</p>
+					</div>
+
 					<m.div
 						className="nav-links"
 						initial={{
@@ -56,13 +80,17 @@ const Home = () => {
 							},
 						}}
 					>
-						<Button className="btn-home mobile-display" name="Resume" />
+						<Button
+							className="btn-home mobile-display"
+							name="Resume"
+							href={resume}
+						/>
 						<Nav />
 					</m.div>
 				</header>
 
 				{/* Main */}
-				<m.div className="hero-main-container relative container ">
+				<div className="hero-main-container relative container ">
 					<m.div
 						className="hero-text-wrap"
 						initial={{
@@ -80,13 +108,14 @@ const Home = () => {
 							className="hero-title-top relative"
 							// style={{ x: xr }}
 						>
-							WEB
+							HI THERE, I'M
 						</m.h1>
-						<m.h1 className="hero-title-middle relative">DEVELOPER</m.h1>
-						<div className="flex">
-							<m.h2 className="hero-luis">LUIS</m.h2>
-							<m.h2 className="hero-viegas">VIEGAS</m.h2>
-						</div>
+						<m.h1 className="hero-title-middle relative"> LUIS VIEGAS.</m.h1>
+						<m.h2 className="hero-luis">
+							A freelance frontend developer & web designer devoted to the craft
+							of building websites and create enjoyable experiences, from São
+							Luis, Brazil.
+						</m.h2>
 					</m.div>
 					<m.div
 						className="location-text"
@@ -101,8 +130,8 @@ const Home = () => {
 							},
 						}}
 					>
-						<p>Based in São Luis, BRAZIL</p>
-						<CurrentDate />
+						{/* <p>Based in São Luis, BRAZIL</p> */}
+						{/* <CurrentDate /> */}
 					</m.div>
 					<m.div
 						className="scroll-down"
@@ -122,8 +151,8 @@ const Home = () => {
 					>
 						<ScrollDown />
 					</m.div>
-				</m.div>
-			</main>
+				</div>
+			</m.main>
 		</>
 	);
 };

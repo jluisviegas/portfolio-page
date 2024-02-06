@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import * as React from 'react';
+import resume from '../../assets/resume.pdf';
 import Button from '../Button';
 import LanguageSelector from '../LanguageSelector';
 import Socials from '../Socials';
@@ -23,7 +24,7 @@ const variants = {
 };
 
 export const Navigation = ({ toggle }) => (
-	<motion.ul variants={variants}>
+	<motion.ul variants={variants} className="mobile-nav-list">
 		{itemIds.map((i) => (
 			<a href={i.url} onClick={toggle}>
 				<MenuItem i={i.id} key={i.id} name={i.link} />

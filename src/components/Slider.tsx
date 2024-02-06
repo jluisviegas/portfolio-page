@@ -23,7 +23,7 @@ const LogoSlider = () => {
 				width="250px"
 				duration={40}
 				pauseOnHover={true}
-				blurBorders={false}
+				blurBorders={true}
 				blurBoderColor={'#101019'}
 			>
 				<Slider.Slide>

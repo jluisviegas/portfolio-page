@@ -16,9 +16,8 @@ const Contact = () => {
 
 	const { scrollYProgress } = useScroll({
 		target: sectionRef,
-		offset: ['start end', 'end end'],
+		offset: ['start 0.9', 'start start'],
 	});
-	const opacitySection = useTransform(scrollYProgress, [0.1, 0.5], [0.2, 1]);
 	const y = useParallax(scrollYProgress, 90);
 
 	const sendEmail = (e) => {
@@ -116,7 +115,7 @@ const Contact = () => {
 							Feel free to send a message for collaborations, advice, or just to
 							say hi!
 						</p>
-						<Socials className="icon-list-contact icon-link" />
+						<Socials className="icon-list-contact" />
 					</div>
 					<div className="info-wrapper">
 						<m.a

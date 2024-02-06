@@ -13,10 +13,6 @@ import {
 	mysql,
 	next,
 	node,
-	number1,
-	number2,
-	number3,
-	number4,
 	react,
 	renata_logo,
 	sass,
@@ -34,7 +30,6 @@ const projectsData = [
 		description:
 			'A e-commerce platform, specialized in providing a diverse range of high-quality breads, buns, cakes, and more to elevate the culinary offerings of restaurants, cafes, and various other establishments in the town. ',
 		stack: '#Next • #Tailwind',
-		number: number1,
 		logo: gabi_logo,
 	},
 	{
@@ -45,7 +40,6 @@ const projectsData = [
 		description:
 			'Professional webpage for self-presentation with the primary goal of  showcasing my expertise and also to facilitate seamless communication and engagement with prospective clients.',
 		stack: '#Astro • #Tailwind • #Framer Motion • #Typescript',
-		number: number2,
 		logo: renata_logo,
 	},
 	{
@@ -56,7 +50,6 @@ const projectsData = [
 		description: 'https://dribble.com/shots',
 		stack: '#Next | #Tailwind',
 
-		number: number3,
 		logo: maia_logo,
 	},
 	{
@@ -67,7 +60,6 @@ const projectsData = [
 		description: 'Simple Translator using Google Translate API',
 		stack: '#Next | #Tailwind',
 
-		number: number4,
 		logo: renata_logo,
 	},
 ];

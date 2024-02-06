@@ -14,7 +14,7 @@
 
 		p {
 			color: var(--clr-neutral-base);
-			font-size: var(--fs-500);
+			font-size: var(--fs-400);
 			margin-block: 0.3rem;
 		}
 
@@ -47,39 +47,31 @@
 
 .hero-main-container {
 	height: 100vh;
-
+	display: flex;
+	justify-content: center;
 	.hero-text-wrap {
-		margin-top: 10vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: 125px;
+		margin-right: 125px;
 
 		.hero-luis {
-			font-size: clamp(1.3rem, 2.2vw, 5.5rem);
-			color: var(--clr-neutral-light);
-			margin-right: 0.5rem;
-		}
-		.hero-viegas {
-			font-size: clamp(1.3rem, 2.2vw, 5.5rem);
+			font-size: clamp(1rem, 1vw, 2.5rem);
 			color: var(--clr-primary-light);
+			margin-left: auto;
+			width: 50%;
+			text-align: end;
 		}
-
 		.hero-title-top {
-			font-size: clamp(4rem, 15vw, 9rem);
+			font-size: clamp(4rem, 10vw, 9rem);
 		}
 		.hero-title-middle {
-			font-size: clamp(4rem, 15vw, 9rem);
+			font-size: clamp(4rem, 10vw, 9rem);
 			@include mq(md) {
-				left: 2.9rem;
+				left: 6rem;
 			}
 		}
-	}
-}
-
-.icon-up {
-	color: var(--clr-accent-base);
-	font-size: var(--fs-400);
-	text-align: end;
-
-	svg {
-		font-size: 2rem;
-		margin-right: 1rem;
 	}
 }

@@ -13,12 +13,9 @@ import javascript from './javascript.png';
 import card4 from './luis-page.png';
 import maia_logo from './maia-logo.png';
 import card1 from './maia-page.png';
+import luis_about from './me-about.jpg';
 import menu from './menu.svg';
 import mysql from './mysql.png';
-import number1 from './n01.svg';
-import number2 from './n02.svg';
-import number3 from './n03.svg';
-import number4 from './n04.svg';
 import next from './next.png';
 import node from './node.png';
 import prisma from './prisma.png';
@@ -47,15 +44,12 @@ export {
 	graphql,
 	html,
 	javascript,
+	luis_about,
 	maia_logo,
 	menu,
 	mysql,
 	next,
 	node,
-	number1,
-	number2,
-	number3,
-	number4,
 	prisma,
 	react,
 	renata_logo,

@@ -10,9 +10,9 @@ body {
 h1,
 h2,
 h3 {
-	font-weight: normal;
+	font-weight: 600;
 	line-height: 1;
-	font-family: var(--ff-antique);
+	font-family: var(--ff-general);
 	color: var(--clr-neutral-base);
 	transition: font-size 0.25s linear;
 }
@@ -75,4 +75,7 @@ span {
 
 .uppercase {
 	text-transform: uppercase;
+}
+ul {
+	padding: 0;
 }

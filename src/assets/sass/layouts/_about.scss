@@ -29,12 +29,32 @@
 		display: flex;
 		flex-direction: column;
 		gap: 2rem;
-		padding: 0.5rem;
 		flex-basis: 1;
-		p {
-			font-size: var(--fs-400);
+		justify-content: space-between;
+		background-color: #16161e;
+		border: solid 1px var(--clr-primary-light);
+
+		border-radius: 2rem;
+		padding: 2rem;
+
+		.about-text {
+			p {
+				font-size: var(--fs-400);
+				line-height: 2rem;
+			}
+		}
+
+		.about-links-arrow {
+			justify-content: space-between;
+			align-items: center;
+			line-height: -10rem;
+			cursor: pointer;
+			.about-email {
+				margin-bottom: 1.5rem;
+			}
 		}
 	}
+
 	.content-left-col {
 		position: relative;
 		display: flex;
@@ -44,19 +64,8 @@
 		gap: 1rem;
 		flex-basis: 1;
 
-		.text-right {
-			color: var(--clr-primary-light);
-			font-weight: 500;
-		}
-
-		span {
-			font-size: var(--fs-600);
-			color: var(--clr-neutral-base);
-		}
-
-		small {
-			color: var(--clr-accent-base);
-			letter-spacing: 2px;
+		img {
+			border-radius: 2rem;
 		}
 	}
 
@@ -85,7 +94,6 @@
 
 	p {
 		color: var(--clr-neutral-base);
-		line-height: 2rem;
 	}
 	span {
 		color: var(--clr-neutral-dark);
@@ -93,31 +101,16 @@
 	}
 }
 
-.about-big-text {
-	font-family: var(--ff-fig);
-	font-size: calc(var(--fs-800) * 2.5);
-	opacity: 0.05;
-	color: var(--clr-neutral-base);
-	letter-spacing: -8px;
-}
-
 .slide-wrapper {
-	margin-top: 8rem;
-	background-color: #16161e;
+	position: relative;
+	margin-block: 5rem;
 	padding: 2.5rem;
 }
 
 .logo-slider {
 	filter: grayscale(0.9);
-	width: 5rem;
+	width: 4rem;
 	&:hover {
 		filter: none;
 	}
-}
-
-.about-socials {
-	border: solid 1px var(--clr-accent-base);
-	border-radius: 2rem;
-	padding: 1rem;
-	width: 2rem;
 }

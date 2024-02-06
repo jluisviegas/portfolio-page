@@ -40,8 +40,8 @@ const Projects = () => {
 		target: sectionRef,
 		offset: ['start end', 'end end'],
 	});
-	const opacitySection = useTransform(scrollYProgress, [0.1, 0.5], [0.2, 1]);
-	const y = useParallax(scrollYProgress, 100);
+	const opacitySection = useTransform(scrollYProgress, [0, 0.6], [0, 1]);
+	const y = useParallax(scrollYProgress, 80);
 
 	return (
 		<m.section

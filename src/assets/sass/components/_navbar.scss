@@ -1,3 +1,5 @@
+@use '../abstracts' as *;
+
 .background {
 	position: relative;
 	width: 3.8rem;
@@ -55,4 +57,30 @@ nav {
 	font-size: clamp(4rem, 18vw, 12rem);
 	letter-spacing: -0.5rem;
 	flex: 1;
+}
+
+.mobile-nav-list {
+	display: flex;
+	flex-direction: column;
+}
+
+.nav-content {
+	display: flex;
+	flex-direction: column;
+	gap: 0.2rem;
+	@include mq(md) {
+		flex-direction: row;
+		align-items: center;
+		gap: 4rem;
+	}
+
+	i {
+		color: var(--clr-accent-base);
+		font-size: var(--fs-300);
+	}
+
+	p {
+		font-size: var(--fs-400);
+		color: var(--clr-primary-light);
+	}
 }

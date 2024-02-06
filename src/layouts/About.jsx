@@ -3,6 +3,7 @@ import { useRef } from 'react';
 import { IoMdArrowDown } from 'react-icons/io';
 import { skillsData } from '../Data';
 import { itemAnimated, slideLeftY, slideRightY } from '../animation';
+import { luis_about } from '../assets/images';
 import LogoSlider from '../components/Slider';
 import useInViewAnimation from '../hooks/useInViewAnimation';
 import { useParallax } from './Projects';
@@ -15,8 +16,8 @@ const About = () => {
 		target: sectionRef,
 		offset: ['start end', 'end end'],
 	});
-	const opacitySection = useTransform(scrollYProgress, [0.1, 0.5], [0.2, 1]);
-	const y = useParallax(scrollYProgress, -200);
+	const opacitySection = useTransform(scrollYProgress, [0, 0.6], [0, 1]);
+	const y = useParallax(scrollYProgress, 100);
 	const x = useParallax(scrollYProgress, 60);
 
 	return (
@@ -30,10 +31,8 @@ const About = () => {
 			}}
 		>
 			{/* Section Header */}
-			<m.div className="section-header" style={{ y }}>
-				<div className="big-header">
-					About <i>Me</i>
-				</div>
+			<m.div className="section-header right" style={{ y }}>
+				<div className="big-header ">About Me</div>
 			</m.div>
 
 			<div className="about-container">
@@ -48,25 +47,8 @@ const About = () => {
 								initial="closed"
 								animate={control}
 							>
-								<small> &lt;p&gt; Hi, There! &lt;/p&gt; </small>
-								<h4 className="text-right">
-									My name is <span>Luis Viegas</span>, Brazilian
-									<span> Web Developer </span>
-									devoted to the craft of <span>building websites</span> and
-									create enjoyable experiences.
-								</h4>
+								<img src={luis_about} alt="Luis" width={400} height={500} />
 							</m.div>
-
-							<div>
-								<m.a
-									href="#project-section"
-									className="arrow-wrapper"
-									initial={{ opacity: 0, scale: 0.5 }}
-									animate={{ opacity: 1, scale: 1 }}
-								>
-									<IoMdArrowDown />
-								</m.a>
-							</div>
 						</div>
 
 						<m.div
@@ -76,37 +58,52 @@ const About = () => {
 							initial="closed"
 							animate={control}
 						>
-							<p>
-								Welcome to my professional journey! I hold an MBA with a
-								specialization in Business and Marketing, and my career has been
-								a dynamic blend of impactful roles in both the private and
-								public sectors. Throughout my tenure in the vibrant city of São
-								Luis - MA, I've consistently taken on management positions and
-								leadership roles, where I've garnered recognition for developing
-								strategic plans that optimize productivity and enhance
-								organizational effectiveness. My ability to innovate processes
-								and drive positive change has been a consistent theme in my
-								professional endeavors.
-							</p>
-							<p>
-								In a recent chapter of my career, I embraced a transformative
-								experience by relocating to Vancouver, CA, where I delved into
-								the realm of Information Technology. This marked the beginning
-								of my pursuit of a passion long harbored – Web Development. This
-								immersive experience not only broadened my technological skill
-								set but also significantly contributed to refining my
-								proficiency in the English language.
-							</p>
+							<div className="about-text">
+								<p>
+									Welcome to my professional journey! I hold an MBA with a
+									specialization in Business and Marketing, and my career has
+									been a dynamic blend of impactful roles in both the private
+									and public sectors. Throughout my carrer, I've consistently
+									taken on management positions and leadership roles, where I've
+									garnered recognition for developing strategic plans that
+									optimize productivity and enhance organizational
+									effectiveness.
+								</p>
+								<p>
+									In a recent chapter of my career, I embraced a transformative
+									experience by relocating to Vancouver, CA, where I dived into
+									Information Technology. This marked the beginning of my
+									pursuit of a passion long harbored – Web Development.
+								</p>
 
-							<p>
-								Technology has always been a driving force in my professional
-								narrative, and my passion lies particularly in full-stack
-								software development, project management, and slowly getting
-								into UI/UX design. I firmly believe in the philosophy of placing
-								humanity at the center of technology. This ethos not only guides
-								my approach to development but also underscores my commitment to
-								fostering positive, user-centric solutions.
-							</p>
+								<p>
+									Technology has always been a driving force in my professional
+									narrative, and my passion lies particularly in full-stack
+									software development, project management, and slowly getting
+									into UI/UX design.
+								</p>
+							</div>
+							<div className="about-links-arrow flex">
+								<div className="about-links">
+									<div className="about-email">
+										<p>JLVIEGASS@GMAIL.COM</p>
+									</div>
+									<p>RESUMÉ</p>
+									<p>LINKEDIN</p>
+									<p>GITHUB</p>
+									<p>INSTAGRAM</p>
+								</div>
+								{/* <div>
+									<m.a
+										href="#project-section"
+										className="arrow-wrapper"
+										initial={{ opacity: 0, scale: 0.5 }}
+										animate={{ opacity: 1, scale: 1 }}
+									>
+										<IoMdArrowDown />
+									</m.a>
+								</div> */}
+							</div>
 						</m.div>
 					</div>
 				</div>
