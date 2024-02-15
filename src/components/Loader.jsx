@@ -70,8 +70,7 @@ const Loader = () => {
 					}}
 				/>
 			</m.svg>
-			<m.small>Luis Viegas</m.small>
-			<m.small>Portfolio 2024</m.small>
+			<m.small>{rounded}</m.small>
 		</div>
 	);
 };

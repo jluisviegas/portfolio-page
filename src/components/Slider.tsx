@@ -20,8 +20,8 @@ const LogoSlider = () => {
 	return (
 		<div className="slide-wrapper">
 			<Slider
-				width="250px"
-				duration={40}
+				width="200px"
+				duration={60}
 				pauseOnHover={true}
 				blurBorders={true}
 				blurBoderColor={'#101019'}

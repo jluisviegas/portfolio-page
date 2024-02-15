@@ -5,27 +5,31 @@ import ProjectCard from '../components/ProjectCard';
 
 const projects = [
 	{
-		title1: 'Gabi',
-		title2: 'Pães',
+		title1: 'Development / Design / 2024',
+		title2: 'Gabi Pães',
 		src: card3,
+		color: '#d7b13a',
 	},
 
 	{
-		title1: 'Renata',
+		title1: 'Development / Design / 2024',
 		title2: 'Nery',
 		src: card2,
+		color: '#111',
 	},
 
 	{
-		title1: 'HS',
+		title1: 'Development / Design / 2023',
 		title2: 'Maia',
 		src: card1,
+		color: '#111',
 	},
 
 	{
-		title1: 'Portfolio',
+		title1: 'Development / Design / 2024',
 		title2: 'Page',
 		src: card4,
+		color: '#111',
 	},
 ];
 
@@ -50,15 +54,14 @@ const Projects = () => {
 			ref={sectionRef}
 			style={{
 				opacity: opacitySection,
-				y,
 			}}
 		>
 			{/* Section Header */}
-			<m.div className="section-header" style={{ y }}>
+			<m.div className="section-header">
 				<div className="big-header right">Projects</div>
 			</m.div>
 			<div className="projects-page">
-				<div className="projects-container">
+				<div className="projects-container container">
 					{projects.map((project) => {
 						return <ProjectCard project={project} />;
 					})}

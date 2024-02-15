@@ -21,9 +21,9 @@
 }
 
 .section-header {
-	font-family: var(--ff-antique);
-	font-size: clamp(4.9rem, 16vw, 16rem);
-	padding: 3rem 0 4rem 0;
+	font-family: var(--ff-general);
+	font-size: clamp(5rem, 16vw, 12rem);
+	padding-top: 2rem;
 	font-weight: 700;
 	text-transform: uppercase;
 }

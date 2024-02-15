@@ -44,15 +44,48 @@ export const itemAnimated = {
 	open: {
 		y: 0,
 		opacity: 1,
+		scale: 1,
 		transition: {
 			duration: 1,
 		},
 	},
-	closed: { y: 20, opacity: 0 },
+	closed: { y: -50, scale: 0.5, opacity: 0 },
 };
 
 export const spring = {
 	type: 'spring',
 	damping: 10,
 	stiffness: 100,
+};
+
+export const projectStaggared = {
+	initial: {
+		opacity: 0,
+		y: 100,
+	},
+	animate: (index) => ({
+		opacity: 1,
+		y: 0,
+		transition: {
+			delay: 0.2 * index,
+			ease: [0.8, 1, 0.8, 1],
+		},
+	}),
+};
+
+export const navItemsList = {
+	open: {
+		opacity: 1,
+		visibility: 'visible',
+		transition: {
+			staggerChildren: 0.2,
+			delayChildren: 0.3,
+			delay: 0.2,
+		},
+	},
+	closed: {
+		opacity: 0,
+		visibility: 'hidden',
+		transition: { staggerChildren: 0.05, staggerDirection: -1 },
+	},
 };

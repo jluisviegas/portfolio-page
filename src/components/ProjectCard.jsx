@@ -2,11 +2,11 @@ import { motion as m } from 'framer-motion';
 import { useState } from 'react';
 import { FiGithub } from 'react-icons/fi';
 import { useInView } from 'react-intersection-observer';
-import { itemAnimated, slideY } from '../animation';
+import { itemAnimated, projectStaggared, slideY } from '../animation';
 import useInViewAnimation from '../hooks/useInViewAnimation';
 import { useParallax } from '../layouts/Projects';
 
-const imgAnimation = {
+const anim = {
 	initial: { width: 0 },
 	open: {
 		width: 'auto',
@@ -14,50 +14,50 @@ const imgAnimation = {
 	},
 	closed: { width: 0 },
 };
+
 const textAnimation = {
-	initial: { opacity: 0 },
+	initial: { marginLeft: 0 },
 	open: {
-		opacity: 1,
+		marginLeft: '1.5rem',
 		transition: { duration: 0.4, ease: [0.23, 1, 0.32, 1] },
 	},
-	closed: { opacity: 0 },
+	closed: { marginLeft: 0 },
 };
 
 const ProjectCard = ({ project }) => {
 	const [isActive, setIsActive] = useState(false);
-	const { title1, title2, src } = project;
+	const { title1, title2, src, index } = project;
 
 	return (
-		<div className="project-wrapper">
-			<div
-				onMouseEnter={() => {
-					setIsActive(true);
-				}}
-				onMouseLeave={() => {
-					setIsActive(false);
-				}}
-				className="project"
-			>
-				<h4>{title1}</h4>
-
-				<m.div
-					variants={imgAnimation}
-					animate={isActive ? 'open' : 'closed'}
-					className="imgContainer"
-				>
-					<img src={src}></img>
-				</m.div>
-
-				<h4>{title2}</h4>
+		<m.div
+			onMouseEnter={() => {
+				setIsActive(true);
+			}}
+			onMouseLeave={() => {
+				setIsActive(false);
+			}}
+			className="project"
+			variants={projectStaggared}
+			initial="initial"
+			whileInView="animate"
+			viewport={{ once: true }}
+			custom={index}
+		>
+			<div className="project-info">
+				<p className="project-desc">{title1}</p>
+				<m.p variants={textAnimation} animate={isActive ? 'open' : 'closed'}>
+					{title2}
+				</m.p>
 			</div>
+
 			<m.div
-				className="project-text-view"
-				variants={textAnimation}
+				variants={anim}
 				animate={isActive ? 'open' : 'closed'}
+				className="imgContainer"
 			>
-				<p>View</p>
+				<img src={src}></img>
 			</m.div>
-		</div>
+		</m.div>
 	);
 };
 

@@ -5,7 +5,6 @@
 	border: solid 1px var(--clr-primary-light);
 	padding: 2rem;
 	height: auto;
-	border-radius: 2rem;
 }
 
 .contact {
@@ -67,12 +66,12 @@
 	justify-content: center;
 	align-items: center;
 	background: var(--clr-neutral-light);
-	height: 7rem;
-	width: 7rem;
+	height: 5.5rem;
+	width: 5.5rem;
 	border-radius: 50%;
 	cursor: pointer;
 	svg {
-		font-size: clamp(5rem, 7vw, 8rem);
+		font-size: clamp(4rem, 6.5vw, 7rem);
 		color: var(--clr-accent-base);
 	}
 

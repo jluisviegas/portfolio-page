@@ -1,42 +1,20 @@
 import { motion as m, useScroll, useTransform } from 'framer-motion';
-import React, { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { IoMdArrowDown } from 'react-icons/io';
-import { itemAnimated, slideRightY } from '../animation';
+import { itemAnimated, navItemsList, slideY } from '../animation';
 import resume from '../assets/resume.pdf';
 import Button from '../components/Button';
-import Logo from '../components/Logo';
-import ScrollDown from '../components/ScrollDown';
 import Nav from '../components/navbar/Navbar';
 import useInViewAnimation from '../hooks/useInViewAnimation';
-
-export function CurrentDate() {
-	const [date, setDate] = useState(new Date());
-
-	useEffect(() => {
-		const timer = setInterval(() => {
-			setDate(new Date());
-		}, 1000);
-
-		return () => {
-			clearInterval(timer);
-		};
-	}, []);
-
-	return (
-		<div className="date">
-			<p>{date.toDateString()}</p>
-		</div>
-	);
-}
 
 const Home = () => {
 	const main = useRef(null);
 
-	const { scrollYProgress } = useScroll({
-		target: main,
-		offset: ['start 0.9', 'start start'],
-	});
+	const { scrollYProgress } = useScroll();
 	const { ref, control } = useInViewAnimation();
+	const x = useTransform(scrollYProgress, [1, 0], [-300, 0]);
+	const xr = useTransform(scrollYProgress, [1, 0], [300, 0]);
+	const opacity = useTransform(scrollYProgress, [1, 0], [0, 1]);
 
 	return (
 		<>
@@ -52,34 +30,22 @@ const Home = () => {
 						duration: 1,
 					},
 				}}
-				style={{ opacity: scrollYProgress }}
 				ref={main}
 			>
 				{/* Header */}
-				<header className="header container">
-					{/* <Logo size="50" /> */}
+				<m.header
+					className="header container"
+					variants={navItemsList}
+					initial="closed"
+					animate="open"
+				>
 					<div className="nav-content">
-						<i class="fa-solid fa-star-of-life"></i> <p>WEB DEVELOPER</p>
-						<p>PORTFOLIO 2024</p>
+						<m.i variants={itemAnimated} class="fa-solid fa-star-of-life"></m.i>
+						<m.p variants={itemAnimated}>WEB DEVELOPER</m.p>
+						<m.p variants={itemAnimated}>PORTFOLIO 2024</m.p>
 					</div>
 
-					<m.div
-						className="nav-links"
-						initial={{
-							opacity: 0,
-							scale: 0.5,
-							y: -50,
-						}}
-						animate={{
-							opacity: 1,
-							scale: 1,
-							y: 0,
-							transition: {
-								duration: 0.5,
-								delay: 0.5,
-							},
-						}}
-					>
+					<m.div className="nav-links" variants={itemAnimated}>
 						<Button
 							className="btn-home mobile-display"
 							name="Resume"
@@ -87,34 +53,34 @@ const Home = () => {
 						/>
 						<Nav />
 					</m.div>
-				</header>
+				</m.header>
 
 				{/* Main */}
-				<div className="hero-main-container relative container ">
-					<m.div
-						className="hero-text-wrap"
-						initial={{
-							opacity: 0,
-						}}
-						animate={{
-							opacity: 1,
-							transition: {
-								duration: 2,
-								delay: 1.2,
-							},
-						}}
-					>
+				<m.div
+					className="hero-main-container relative container "
+					variants={navItemsList}
+					initial="closed"
+					animate="open"
+				>
+					<m.div className="hero-text-wrap">
 						<m.h1
-							className="hero-title-top relative"
-							// style={{ x: xr }}
+							className="hero-title-top"
+							style={{ x, opacity }}
+							variants={slideY}
 						>
 							HI THERE, I'M
 						</m.h1>
-						<m.h1 className="hero-title-middle relative"> LUIS VIEGAS.</m.h1>
-						<m.h2 className="hero-luis">
+						<m.h1
+							className="hero-title-middle relative"
+							style={{ x: xr }}
+							variants={slideY}
+						>
+							LUIS VIEGAS.
+						</m.h1>
+						<m.h2 className="hero-luis" variants={slideY}>
 							A freelance frontend developer & web designer devoted to the craft
-							of building websites and create enjoyable experiences, from São
-							Luis, Brazil.
+							of building websites and create enjoyable experiences, from
+							<b> SÃO LUIS, BRAZIL.</b>
 						</m.h2>
 					</m.div>
 					<m.div
@@ -129,29 +95,20 @@ const Home = () => {
 								delay: 1,
 							},
 						}}
-					>
-						{/* <p>Based in São Luis, BRAZIL</p> */}
-						{/* <CurrentDate /> */}
-					</m.div>
-					<m.div
-						className="scroll-down"
-						initial={{
-							opacity: 0,
-							scale: 0.7,
-						}}
-						animate={{
-							opacity: 1,
-							scale: 1,
+					></m.div>
 
-							transition: {
-								duration: 0.8,
-								delay: 1,
-							},
-						}}
-					>
-						<ScrollDown />
-					</m.div>
-				</div>
+					<div>
+						<m.a
+							href="#project-section"
+							className="scroll-down"
+							variants={itemAnimated}
+							initial="closed"
+							animate="open"
+						>
+							<IoMdArrowDown />
+						</m.a>
+					</div>
+				</m.div>
 			</m.main>
 		</>
 	);

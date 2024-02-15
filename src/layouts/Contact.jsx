@@ -14,12 +14,6 @@ const Contact = () => {
 	const sectionRef = useRef(null);
 	const { ref, control } = useInViewAnimation();
 
-	const { scrollYProgress } = useScroll({
-		target: sectionRef,
-		offset: ['start 0.9', 'start start'],
-	});
-	const y = useParallax(scrollYProgress, 90);
-
 	const sendEmail = (e) => {
 		e.preventDefault();
 
@@ -47,8 +41,7 @@ const Contact = () => {
 				className="contact"
 				initial="closed"
 				whileInView="open"
-				viewport={{ once: true, amount: 0 }}
-				variants={itemAnimated}
+				variants={slideY}
 			>
 				{/* Contact Form */}
 				<div className="form-col">
@@ -57,7 +50,7 @@ const Contact = () => {
 						ref={cRef}
 						initial="closed"
 						whileInView="open"
-						viewport={{ once: false, amount: 0 }}
+						viewport={{ once: true, amount: 0 }}
 						variants={itemAnimated}
 					>
 						<h2>
