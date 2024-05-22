@@ -21,17 +21,21 @@
 }
 
 .section-header {
-	font-family: var(--ff-general);
-	font-size: clamp(5rem, 16vw, 12rem);
-	padding-top: 2rem;
+	font-family: var(--ff-din);
+	font-size: clamp(5.5rem, 16vw, 12rem);
+	padding-top: 6vh;
 	font-weight: 700;
 	text-transform: uppercase;
+	span {
+		font-weight: 400;
+	}
 }
 
 .big-header {
-	opacity: 0.05;
 	color: var(--clr-neutral-base);
-	letter-spacing: -8px;
+	span {
+		color: var(--clr-accent-base);
+	}
 }
 
 .blur {

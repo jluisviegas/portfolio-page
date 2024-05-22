@@ -4,7 +4,7 @@ import { IoMdArrowDown } from 'react-icons/io';
 import { skillsData } from '../Data';
 import { itemAnimated, slideRightY, slideY } from '../animation';
 import { luis_about } from '../assets/images';
-import LogoSlider from '../components/Slider';
+import LogoSlider from '../components/Tools';
 import useInViewAnimation from '../hooks/useInViewAnimation';
 import { useParallax } from './Projects';
 
@@ -31,45 +31,52 @@ const About = () => {
 			variants={slideY}
 		>
 			{/* Section Header */}
-			<m.div className="section-header">
-				<div className="big-header ">About Me</div>
+			<m.div className="section-header container">
+				<div className="big-header ">
+					Sobre Mim<span>.</span>
+				</div>
 			</m.div>
 
 			<div className="about-container container">
 				{/* About Descriprion */}
 				<div className="about-content">
 					<div className="about-description">
-						<div className="content-left-col">
-							<div className="content-left">
-								<img src={luis_about} alt="Luis" />
-							</div>
+						<div className="content-image">
+							<img src={luis_about} alt="Luis" />
+						</div>
+						<div className="about-main-text">
+							<p>
+								Com uma carreira marcada por conquistas tanto no setor privado
+								quanto no público, destaco-me como um profissional
+								multifacetado, com sólida experiência em
+								<b> gestão de negócios, vendas e administração</b>. No entanto,
+								é como desenvolvedor web que encontro minha verdadeira paixão e
+								especialização desde 2020. Com
+								<b> formação em Tecnologia da Informação</b> pela Canadian
+								College, em Vancouver, CA, passei me dedicar a ser programador e
+								juntar todo o meu conhecimento para oferecer soluções web de
+								alta qualidade e impacto. Desde esse tempo, estou focado em
+								colaborar em projetos <b> freelancer de criação de sites</b>,
+								onde minhas habilidades garantem resultados excepcionais para
+								cada cliente.
+							</p>
 						</div>
 
-						<div className="content-right-col">
-							<div className="about-text">
-								<p>
-									With an MBA specializing in Business and Marketing, Luis
-									Viegas has navigated a dynamic career spanning both private
-									and public sectors. Known for assuming management and
-									leadership roles, he has earned recognition for crafting
-									strategic plans that optimize productivity and bolster
-									organizational effectiveness. Moving to Vancouver (CA) for a
-									while, was a turning point for him, sparking a newfound
-									interest in Information Technology, particularly web
-									development. Technology has always been a driving force in his
-									career, with a focus on building websites, managing projects,
-									and developing an interest in making user-friendly designs.
-								</p>
-								<p>
-									Take a look at my <a href="">Resume</a> and feel free to
-									contact me <a href="">jlviegass@gmail.com</a>
-								</p>
-							</div>
+						<div className="bottom-tools">
+							<p>FERRAMENTAS</p>
+							<LogoSlider />
+						</div>
+						<div className="bottom-skills">
+							<p>O QUE EU FAÇO?</p>
+							<h4>
+								UI/UX • WEB DESIGN RESPONSIVO <br /> DESENVOLVIMENTO DE SITES
+								<br />
+								SISTEMAS ⎯ BRANDING
+							</h4>
 						</div>
 					</div>
 				</div>
 			</div>
-			<LogoSlider />
 		</m.section>
 	);
 };

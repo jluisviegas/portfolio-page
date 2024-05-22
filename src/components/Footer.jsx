@@ -9,7 +9,7 @@ const Footer = () => {
 			<div className="footer-main container">
 				<div className="footer-logo mobile-display">
 					<p>© 2024</p>
-					<p>Designed & Developed by Luis Viegas.</p>
+					<p>Design & Desenvolvimento por Luis Viegas.</p>
 				</div>
 			</div>
 		</footer>

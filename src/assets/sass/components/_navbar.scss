@@ -37,7 +37,6 @@ nav {
 		position: absolute;
 		top: 200%;
 		right: 5rem;
-		line-height: 0.9;
 		z-index: 4;
 		a {
 			color: var(--clr-primary-dark);
@@ -53,10 +52,9 @@ nav {
 }
 
 .section-link {
-	font-family: var(--ff-fig);
+	font-family: var(--ff-din);
 	font-weight: 700;
-	font-size: clamp(4rem, 18vw, 13rem);
-	letter-spacing: -0.5rem;
+	font-size: clamp(6.5rem, 18vw, 13rem);
 	flex: 1;
 }
 
@@ -69,10 +67,11 @@ nav {
 	display: flex;
 	flex-direction: column;
 	gap: 0.5rem;
+	letter-spacing: 4px;
 	@include mq(md) {
 		flex-direction: row;
 		align-items: center;
-		gap: 4rem;
+		gap: 10vw;
 	}
 
 	i {

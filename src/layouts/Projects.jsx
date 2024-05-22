@@ -1,9 +1,40 @@
 import { motion as m, useInView, useScroll, useTransform } from 'framer-motion';
 import { useRef, useState } from 'react';
 import { card1, card2, card3, card4 } from '../assets/images';
-import ProjectCard from '../components/ProjectCard';
+import OtherProjects from '../components/OtherProjects';
+import Project from '../components/Project';
 
 const projects = [
+	{
+		title1: 'Desenvolvimento / Design / 2024',
+		title2: 'Gabi Pães',
+		src: card3,
+		color: '#d7b13a',
+	},
+
+	{
+		title1: 'Desenvolvimento / Design / 2024',
+		title2: 'Nery',
+		src: card2,
+		color: '#111',
+	},
+
+	{
+		title1: 'Desenvolvimento / Design / 2023',
+		title2: 'Maia',
+		src: card1,
+		color: '#111',
+	},
+
+	{
+		title1: 'Desenvolvimento / Design / 2024',
+		title2: 'Page',
+		src: card4,
+		color: '#111',
+	},
+];
+
+const otherProjects = [
 	{
 		title1: 'Development / Design / 2024',
 		title2: 'Gabi Pães',
@@ -57,16 +88,19 @@ const Projects = () => {
 			}}
 		>
 			{/* Section Header */}
-			<m.div className="section-header">
-				<div className="big-header right">Projects</div>
+			<m.div className="section-header container">
+				<div className="big-header right">
+					Projetos<span>.</span>
+				</div>
 			</m.div>
 			<div className="projects-page">
 				<div className="projects-container container">
 					{projects.map((project) => {
-						return <ProjectCard project={project} />;
+						return <Project project={project} />;
 					})}
 				</div>
 			</div>
+			<div>{/* <OtherProjects otherProjects={otherProjects} /> */}</div>
 		</m.section>
 	);
 };

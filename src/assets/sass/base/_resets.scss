@@ -32,8 +32,7 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-	background-color: var(--clr-accent-base);
-	border-radius: 0.1875rem;
+	background-color: var(--clr-primary-light);
 	cursor: grab;
 }
 

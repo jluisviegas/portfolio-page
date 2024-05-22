@@ -15,7 +15,7 @@ export const Navigation = ({ toggle }) => (
 );
 
 const itemIds = [
-	{ id: 0, link: 'About', url: '#about-section' },
-	{ id: 1, link: 'Projects', url: '#portfolio-section' },
-	{ id: 2, link: 'Contact', url: '#contact-section' },
+	{ id: 0, link: 'Sobre ', url: '#about-section' },
+	{ id: 1, link: 'Projetos', url: '#portfolio-section' },
+	{ id: 2, link: 'Contato', url: '#contact-section' },
 ];

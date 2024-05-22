@@ -53,44 +53,42 @@ const Contact = () => {
 						viewport={{ once: true, amount: 0 }}
 						variants={itemAnimated}
 					>
-						<h2>
-							Get in
-							<i> touch.</i>
-						</h2>
+						<h5>ENTRE EM</h5>
+						<h2>CONTATO.</h2>
 					</m.div>
 					<form ref={form} onSubmit={sendEmail}>
-						<label htmlFor="">Your name</label>
+						<label htmlFor="">Nome</label>
 						<m.input
 							type="text"
 							name="name"
-							placeholder="E.g. John Doe"
+							placeholder="Ex: José Luis"
 							required
 							variants={itemAnimated}
 							ref={ref}
 							animate={control}
 							initial="closed"
 						/>
-						<label htmlFor="">Your email</label>
+						<label htmlFor="">Email</label>
 
 						<m.input
 							type="email"
 							name="email"
-							placeholder="E.g. johndoe@gmail.com"
+							placeholder="Ex: joseluis@gmail.com"
 							required
 							variants={itemAnimated}
 							ref={ref}
 							animate={control}
 							initial="closed"
 						/>
-						<label htmlFor="">Message</label>
+						<label htmlFor="">Sua mensagem</label>
 
 						<div className="text-message">
-							<Button className="btn-form" name="Send" />
+							<Button className="btn-form" name="Enviar" />
 							<m.textarea
 								className="ff-headers"
 								name="message"
 								rows="6"
-								placeholder="Enter your message"
+								placeholder="Escreva sua mensagem"
 								variants={itemAnimated}
 								ref={ref}
 								animate={control}
@@ -104,9 +102,9 @@ const Contact = () => {
 				<div className="contact-col">
 					<div className="contact-text-message">
 						<p>
-							Exploring growth opportunities and connections. <br />
-							Feel free to send a message for collaborations, advice, or just to
-							say hi!
+							Explorando conexões e oportunidades de crescimento. <br />
+							Fique a vontade para enviar uma mensagem sobre trabalhos,
+							colaborações, informações ou apenas para dizer "oi"! 😊
 						</p>
 						<Socials className="icon-list-contact" />
 					</div>

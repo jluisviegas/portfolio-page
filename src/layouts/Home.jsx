@@ -2,6 +2,7 @@ import { motion as m, useScroll, useTransform } from 'framer-motion';
 import { useRef, useState } from 'react';
 import { IoMdArrowDown } from 'react-icons/io';
 import { itemAnimated, navItemsList, slideY } from '../animation';
+import { logo } from '../assets/images';
 import resume from '../assets/resume.pdf';
 import Button from '../components/Button';
 import Nav from '../components/navbar/Navbar';
@@ -22,10 +23,10 @@ const Home = () => {
 				className="hero-section"
 				id="#"
 				initial={{
-					background: 'hsl(224, 52%, 4%)',
+					background: 'hsl(240, 24%, 8%)',
 				}}
 				animate={{
-					background: 'hsl(240, 24%, 8%)',
+					background: 'hsl(0, 0%, 12%)',
 					transition: {
 						duration: 1,
 					},
@@ -40,9 +41,12 @@ const Home = () => {
 					animate="open"
 				>
 					<div className="nav-content">
-						<m.i variants={itemAnimated} class="fa-solid fa-star-of-life"></m.i>
-						<m.p variants={itemAnimated}>WEB DEVELOPER</m.p>
-						<m.p variants={itemAnimated}>PORTFOLIO 2024</m.p>
+						<m.img
+							variants={itemAnimated}
+							class="fa-solid fa-star-of-life"
+							src={logo}
+						></m.img>
+						<m.p variants={itemAnimated}>PORTFÓLIO 2024</m.p>
 					</div>
 
 					<m.div className="nav-links" variants={itemAnimated}>
@@ -62,40 +66,42 @@ const Home = () => {
 					initial="closed"
 					animate="open"
 				>
-					<m.div className="hero-text-wrap">
+					<m.div className="hero-description">
+						<m.h4 variants={slideY}>
+							<b>Desenvolvedor </b>
+							web e web <b>designer</b> freelancer dedicado à arte de
+							<b> criar sites </b>e experiências digitais únicas agradáveis e
+							inspiradoras. Especializado em soluções personalizadas para cada
+							cliente. Baseado em
+							<b> SÃO LUIS / MA, BRASIL.</b>
+						</m.h4>
+					</m.div>
+
+					<div className="hero-headers">
+						<div className="hero-header-top">
+							<div className="hero-socials">
+								<ul>
+									<li>INSTAGRAM</li>
+									<li>LINKEDIN</li>
+								</ul>
+							</div>
+							<m.h1
+								className="hero-title-top"
+								style={{ x, opacity }}
+								variants={slideY}
+							>
+								LUIS VIEGAS
+							</m.h1>
+						</div>
+
 						<m.h1
-							className="hero-title-top"
-							style={{ x, opacity }}
-							variants={slideY}
-						>
-							HI THERE, I'M
-						</m.h1>
-						<m.h1
-							className="hero-title-middle relative"
+							className="hero-title-bottom relative"
 							style={{ x: xr }}
 							variants={slideY}
 						>
-							LUIS VIEGAS.
+							DESENVOLVEDOR <br /> & WEB DESIGNER.
 						</m.h1>
-						<m.h2 className="hero-luis" variants={slideY}>
-							A freelance frontend developer & web designer devoted to the craft
-							of building websites and create enjoyable experiences, from
-							<b> SÃO LUIS, BRAZIL.</b>
-						</m.h2>
-					</m.div>
-					<m.div
-						className="location-text"
-						initial={{
-							opacity: 0,
-						}}
-						animate={{
-							opacity: 1,
-							transition: {
-								duration: 0.8,
-								delay: 1,
-							},
-						}}
-					></m.div>
+					</div>
 
 					<div>
 						<m.a

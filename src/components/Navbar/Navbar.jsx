@@ -18,7 +18,7 @@ const sidebar = {
 	closed: {
 		scale: 1,
 		borderRadius: '50%',
-		background: '#ff003b',
+		background: '#81B421',
 		transition: {
 			type: 'spring',
 			stiffness: 400,

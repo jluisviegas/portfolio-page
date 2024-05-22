@@ -10,10 +10,11 @@ import card3 from './gabi-page.png';
 import graphql from './graphql.png';
 import html from './html.png';
 import javascript from './javascript.png';
+import logo from './logo.png';
 import card4 from './luis-page.png';
 import maia_logo from './maia-logo.png';
 import card1 from './maia-page.png';
-import luis_about from './me-about.jpg';
+import luis_about from './me-about.png';
 import menu from './menu.svg';
 import mysql from './mysql.png';
 import next from './next.png';
@@ -44,6 +45,7 @@ export {
 	graphql,
 	html,
 	javascript,
+	logo,
 	luis_about,
 	maia_logo,
 	menu,

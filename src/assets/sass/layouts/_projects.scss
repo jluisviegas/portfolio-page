@@ -1,20 +1,52 @@
+@use '../abstracts' as *;
+
 .projects-page {
 	// min-height: 100vh;
-	margin-block: 6rem;
+	margin-block: 4rem;
 }
 
 .project {
-	border-top: 1px solid var(--clr-primary-light);
-	padding-top: 1.5vw;
-	padding-bottom: 1.5vw;
+	border-top: 1px solid transparent;
+	border-image: linear-gradient(
+			90deg,
+			rgb(64, 64, 64) -25%,
+			rgba(30, 30, 30, 1) 100%
+		)
+		1;
 	cursor: pointer;
 	width: 100%;
 	display: flex;
+	flex-direction: column;
 	justify-content: space-between;
-	align-items: center;
+	.project-info {
+		padding-top: 2rem;
+		padding-bottom: 2rem;
+		.project-description {
+			display: flex;
+			justify-content: space-between;
 
-	.project-desc {
-		font-size: var(--fs-400);
+			p {
+				font-size: var(--fs-300);
+				color: var(--clr-primary-light);
+			}
+		}
+
+		.project-title {
+			display: flex;
+			align-items: end;
+			justify-content: space-between;
+
+			svg {
+				font-size: 2rem;
+				color: var(--clr-primary-light);
+			}
+		}
+	}
+
+	h2 {
+		font-size: clamp(3rem, 8vw, 7rem);
+		// text-transform: uppercase;
+		// letter-spacing: 10px;
 	}
 	p {
 		font-size: clamp(2.5rem, 8vw, 6.5rem);
@@ -32,9 +64,26 @@
 		overflow: hidden;
 		display: flex;
 		justify-content: center;
-		width: 0;
+		width: 100%;
+		// height: auto;
+		border-radius: 0.5rem;
 	}
 	img {
-		width: 22vw;
+		width: 100vw;
+	}
+}
+
+@include mq(md) {
+	.project {
+		flex-direction: row;
+
+		.project-info {
+			padding-top: 4rem;
+			padding-bottom: 4rem;
+		}
+
+		img {
+			width: 35vw;
+		}
 	}
 }

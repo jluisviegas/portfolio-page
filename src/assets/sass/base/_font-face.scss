@@ -20,8 +20,23 @@
 }
 
 @font-face {
+	font-family: 'D-DIN Condensed';
+	font-style: normal;
+	font-weight: 400;
+	src: url(/src/assets/fonts/D-DINCondensed.otf) format('truetype');
+}
+
+@font-face {
+	font-family: 'PP Eiko';
+	font-style: normal;
+	font-weight: 400;
+	src: url(/src/assets/fonts/PPEiko-Thin.otf) format('truetype');
+}
+
+@font-face {
 	font-family: 'Apercu Mono';
 	src: url(/src/assets/fonts/ApercuMonoProRegular.ttf) format('truetype');
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
